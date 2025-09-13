@@ -1,6 +1,8 @@
 // SYNTAX TEST "Packages/OverpassQL/OverpassQL.sublime-syntax"
 
   // line comment
+//^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass
+//^^ punctuation.definition.comment.begin.overpass
 
   /* block
 //^^^^^^^^ comment.block.overpass
