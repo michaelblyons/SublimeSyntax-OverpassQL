@@ -106,7 +106,7 @@ contexts:
     - match: \)
       scope: punctuation.section.block.end.overpass
       pop: 1
-    - include: query-statements
+    - include: statements
 
   if-statements: []
   foreach-statements: []
