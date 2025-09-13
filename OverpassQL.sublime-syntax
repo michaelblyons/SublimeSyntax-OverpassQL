@@ -3,6 +3,8 @@
 # https://www.sublimetext.com/docs/syntax.html
 # https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL
 
+# Copyright (C) 2025  Michael B. Lyons
+
 name: Overpass QL
 scope: source.overpass
 version: 2
