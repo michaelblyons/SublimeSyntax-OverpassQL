@@ -28,7 +28,7 @@ jobs:
             packages: master
           - build: 'stable'
             packages: binary
-          - build: 3170  # Required for `embed`
+          - build: 3200
             packages: binary
     steps:
       - uses: actions/checkout@v5
