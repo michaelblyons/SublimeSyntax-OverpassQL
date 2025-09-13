@@ -28,7 +28,7 @@ jobs:
             packages: master
           - build: 'stable'
             packages: binary
-          - build: 3200
+          - build: 4077 # For `version: 2`
             packages: binary
     steps:
       - uses: actions/checkout@v5
