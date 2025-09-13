@@ -1,0 +1,256 @@
+%YAML 1.2
+---
+# https://www.sublimetext.com/docs/syntax.html
+# https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL
+
+name: Overpass QL
+scope: source.overpass
+version: 2
+
+file_extensions:
+  - overpass
+  - overpassql
+
+contexts:
+
+  prototype:
+    - include: comments
+
+  main:
+    - include: statements
+    - include: styles
+
+  comments:
+    - include: comment-line
+    - include: comment-block
+
+  comment-line:
+    - match: //
+      scope: punctuation.definition.comment.begin.overpass
+      push: comment-line-body
+
+  comment-line-body:
+    - meta_scope: comment.line.double-slash.overpass
+    - match: \n
+      pop: 1
+
+  comment-block:
+    - match: /\*
+      scope: punctuation.definition.comment.begin.overpass
+      push: comment-block-body
+
+  comment-block-body:
+    - meta_scope: comment.block.overpass
+    - match: \*/
+      scope: punctuation.definition.comment.end.overpass
+      pop: 1
+
+  statements:
+    - match: ;
+      scope: punctuation.terminator.statement.overpass
+    - include: sets
+    - include: settings
+    - include: block-statements
+    - include: standalone-statements
+
+###[ SETS ]####################################################################
+
+  sets:
+    - match: \b_\b
+      scope: variable.language.overpass
+
+###[ SETTINGS ]################################################################
+
+  settings:
+    - match: (\[)(?=[^\]]+:)
+      captures:
+        1: punctuation.definition.setting.begin.overpass
+      push: [setting-body, setting-body-value, setting-body-key]
+
+  setting-body:
+    - meta_scope: meta.brackets.setting.overpass
+    - match: \]
+      scope: punctuation.definition.setting.end.overpass
+      pop: 1
+
+  setting-body-key:
+    - match: ':'
+      scope: punctuation.separator.key-value.overpass
+      pop: 1
+    - include: literals
+    - match: '[^:]+'
+      scope: variable.other.overpass
+
+  setting-body-value:
+    - match: (?=])
+      pop: 1
+    - include: literals
+
+###[ BLOCK STATEMENTS ]########################################################
+
+  block-statements:
+    - include: logical-statements
+    - include: if-statements
+    - include: foreach-statements
+    - include: for-statements
+    - include: retro-statements
+    - include: compare-statements
+
+  logical-statements:
+    - match: \(
+      scope: punctuation.section.block.begin.overpass
+      push: logical-statement-body
+
+  logical-statement-body:
+    - meta_scope: meta.block.overpass
+    - match: \)
+      scope: punctuation.section.block.end.overpass
+      pop: 1
+    - include: query-statements
+
+  if-statements: []
+  foreach-statements: []
+  for-statements: []
+  complete-statements: []
+  retro-statements: []
+  compare-statements: []
+
+###[ STANDALONE STATEMENTS ]###################################################
+
+  standalone-statements:
+    - include: out-statements
+    - include: query-statements
+    - include: recursion
+
+  out-statements:
+    - match: \bout\b
+      scope: keyword.control.flow.return.overpass
+      push: maybe-out-type
+
+  maybe-out-type:
+    - match: ;
+      scope: punctuation.terminator.statement.overpass
+      pop: 1
+    - match: \b(?:ids|skel|body|tags|meta)\b
+      scope: support.type.overpass
+    - match: \b(?:geom|bb|center)\b
+      scope: keyword.other.overpass
+    - match: \b(?:asc|qt)\b
+      scope: keyword.other.overpass
+
+  recursion:
+    - match: (?:>>|<<|<|>)
+      scope: keyword.operator.pipe.overpass
+
+  is_in: []
+  timeline: []
+  local: []
+  convert: []
+  make: []
+
+###[ QUERY STATEMENTS ]########################################################
+
+  query-statements:
+    - match: (?:node|way|area|rel|relation|derived|nwr)
+      scope: entity.name.tag.overpass
+      push: [query-statement, maybe-assignment, query-filters]
+
+  query-statement:
+    - meta_scope: meta.statement.overpass
+    - include: pop-terminator
+
+  query-filters:
+    - match: (?=->|;)
+      pop: 1
+
+    - match: \[
+      scope: punctuation.definition.brackets.begin.overpass
+      push: [query-filter-body, query-filter-value, query-filter-key]
+
+  maybe-assignment:
+    - match: (?=;)
+      pop: 1
+    - match: '->'
+      scope: keyword.operator.assignment.overpass
+      push: assignment
+
+  assignment:
+    - match: (?=;)
+      pop: 1
+
+  query-filter-body:
+    - meta_scope: meta.brackets.setting.overpass
+    - match: \]
+      scope: punctuation.definition.setting.end.overpass
+      pop: 1
+
+  query-filter-key:
+    - match: (=|!=|>|<|<=|>=|~|!~)
+      scope: keyword.operator.logical.overpass
+      pop: 1
+    - match: (?=])
+      pop: 1
+    - include: literals
+
+  query-filter-value:
+    - match: (?=])
+      pop: 1
+    - include: literals
+
+###[ STYLES ]##################################################################
+
+  styles:
+    - match: '{{'
+      embed: scope:source.css
+      escape: '}}'
+
+###[ OPERATORS ]###############################################################
+
+  operators: []
+
+###[ LITERALS ]################################################################
+
+  literals:
+    - include: strings
+
+  strings:
+    - include: strings-double
+    - include: strings-single
+
+  strings-single:
+    - match: \'
+      scope: punctuation.definition.string.begin.overpass
+      push: string-single-body
+
+  string-single-body:
+    - meta_include_prototype: false
+    - meta_scope: string.quoted.single.overpass
+    - match: \\.
+      scope: constant.character.escape.overpass
+    - match: \'
+      scope: punctuation.definition.string.end.overpass
+      pop: 1
+
+  strings-double:
+    - match: '"'
+      scope: punctuation.definition.string.begin.overpass
+      push: string-double-body
+
+  string-double-body:
+    - meta_include_prototype: false
+    - meta_scope: string.quoted.double.overpass
+    - match: \\.
+      scope: constant.character.escape.overpass
+    - match: '"'
+      scope: punctuation.definition.string.end.overpass
+      pop: 1
+
+  numbers: []
+  dates: []
+
+###[ UTILITY ]#################################################################
+
+  pop-terminator:
+    - match: ;
+      scope: punctuation.terminator.overpass
+      pop: 1

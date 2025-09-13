@@ -1,0 +1,335 @@
+// SYNTAX TEST "Packages/OverpassQL/OverpassQL.sublime-syntax"
+
+  // line comment
+
+  /* block
+//^^^^^^^^ comment.block.overpass
+//^^ punctuation.definition.comment.begin.overpass
+  comment
+  */
+//^^ comment.block.overpass
+//^^ punctuation.definition.comment.end.overpass
+//  ^ - comment
+
+  node[name=Foo];
+//^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//         ^ keyword.operator.logical.overpass
+//             ^ punctuation.definition.setting.end.overpass
+//              ^ punctuation.terminator.overpass
+  node[name='Foo'];
+//^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//         ^ keyword.operator.logical.overpass
+//          ^^^^^ string.quoted.single.overpass
+//          ^ punctuation.definition.string.begin.overpass
+//              ^ punctuation.definition.string.end.overpass
+//               ^ punctuation.definition.setting.end.overpass
+//                ^ punctuation.terminator.overpass
+  node[name="Foo"];
+//^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//         ^ keyword.operator.logical.overpass
+//          ^^^^^ string.quoted.double.overpass
+//          ^ punctuation.definition.string.begin.overpass
+//              ^ punctuation.definition.string.end.overpass
+//               ^ punctuation.definition.setting.end.overpass
+//                ^ punctuation.terminator.overpass
+  node['name'="Foo"];
+//^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.single.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^ keyword.operator.logical.overpass
+//            ^^^^^ string.quoted.double.overpass
+//            ^ punctuation.definition.string.begin.overpass
+//                ^ punctuation.definition.string.end.overpass
+//                 ^ punctuation.definition.setting.end.overpass
+//                  ^ punctuation.terminator.overpass
+  node["name"="Foo"];
+//^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.double.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^ keyword.operator.logical.overpass
+//            ^^^^^ string.quoted.double.overpass
+//            ^ punctuation.definition.string.begin.overpass
+//                ^ punctuation.definition.string.end.overpass
+//                 ^ punctuation.definition.setting.end.overpass
+//                  ^ punctuation.terminator.overpass
+  node["name"='Foo'];
+//^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.double.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^ keyword.operator.logical.overpass
+//            ^^^^^ string.quoted.single.overpass
+//            ^ punctuation.definition.string.begin.overpass
+//                ^ punctuation.definition.string.end.overpass
+//                 ^ punctuation.definition.setting.end.overpass
+//                  ^ punctuation.terminator.overpass
+
+  node[name="Foo Street"];
+//^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//         ^ keyword.operator.logical.overpass
+//          ^^^^^^^^^^^^ string.quoted.double.overpass
+//          ^ punctuation.definition.string.begin.overpass
+//                     ^ punctuation.definition.string.end.overpass
+//                      ^ punctuation.definition.setting.end.overpass
+//                       ^ punctuation.terminator.overpass
+  node["name:fr"="Rue Feau"];
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^^^^ string.quoted.double.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//             ^ punctuation.definition.string.end.overpass
+//              ^ keyword.operator.logical.overpass
+//               ^^^^^^^^^^ string.quoted.double.overpass
+//               ^ punctuation.definition.string.begin.overpass
+//                        ^ punctuation.definition.string.end.overpass
+//                         ^ punctuation.definition.setting.end.overpass
+//                          ^ punctuation.terminator.overpass
+
+  node[power=""];          // not supported
+//^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//          ^ keyword.operator.logical.overpass
+//           ^^ string.quoted.double.overpass
+//           ^ punctuation.definition.string.begin.overpass
+//            ^ punctuation.definition.string.end.overpass
+//             ^ punctuation.definition.setting.end.overpass
+//              ^ punctuation.terminator.overpass
+//                         ^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass
+//                         ^^ punctuation.definition.comment.begin.overpass
+  node[power~"^$"];        // use regular expression instead
+//^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//          ^ keyword.operator.logical.overpass
+//           ^^^^ string.quoted.double.overpass
+//           ^ punctuation.definition.string.begin.overpass
+//              ^ punctuation.definition.string.end.overpass
+//               ^ punctuation.definition.setting.end.overpass
+//                ^ punctuation.terminator.overpass
+//                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass
+//                         ^^ punctuation.definition.comment.begin.overpass
+
+  node[~"^$"~"."];         // find nodes with empty key ("") and any value
+
+  node["name"];
+  node['name'];
+  node[name];
+
+  node[!"name"];
+  node[!'name'];
+  node[!name];
+
+  node["name"~"^Foo$"];   // Finds nodes, where the tag name matches exactly Foo - identical to node["name"="foo"];
+  node["name"~"^Foo"];    // Finds nodes, where the tag name starts with Foo
+  node["name"~"Foo$"];    // Finds nodes, where the tag name ends with Foo
+  node["name"~"Foo"];     // Finds nodes, where the tag name contains the substring Foo anywhere in the tag value
+  node["name"~".*"];      // Finds nodes, where the tag name matches anything, equal to node["name"];
+  node["name"!~".*"];    // Finds nodes without name tag; does not have key name - identical to node[!"name"];
+
+  node["name"!="Foo"];
+  node["name"!~"Foo"];
+  node["name"!~"Foo",i];
+
+  // Example 1
+
+  area[name="Köln"]->.b;
+  rel(area.b)[name="Innenstadt"];
+  map_to_area -> .a;
+  node(area.a)[amenity=pub];
+  out meta;
+
+  // Example 2
+
+  area[admin_level=4]["name"="Hessen"][boundary=administrative]->.boundaryarea;
+  ( node(area.boundaryarea)["amenity"="fire_station"];
+    way(area.boundaryarea)["amenity"="fire_station"];
+    >;
+//  ^ keyword.operator.pipe.overpass
+//   ^ punctuation.terminator.statement.overpass
+  ) ->.a;
+
+  .a is_in -> .b;
+  area.b[admin_level=8] -> .bf;
+
+  rel(area.boundaryarea)[admin_level=8];
+  map_to_area -> .bllf;
+
+  (.bllf; - .bf; );
+  rel(pivot);
+  (._;>;);
+  out;
+
+  // Example 3
+
+  [out:csv(::"type",::"id", name, admin_level,::"count")];
+  area[name="Saarland"][boundary];
+   rel(area)[boundary][admin_level=6];
+   map_to_area;
+   foreach->.d(
+     (.d;);out; 
+     (node(area.d)[amenity=pharmacy];
+      way(area.d)[amenity=pharmacy];
+      relation(area.d)[amenity=pharmacy];);
+     out count;
+   );
+
+  // Example 4
+
+  rel(62716)->.b;
+    .b out;
+//     ^^^ keyword.control.flow.return.overpass
+//        ^ punctuation.terminator.statement.overpass
+    .b map_to_area;
+    out;
+//  ^^^ keyword.control.flow.return.overpass
+//     ^ punctuation.terminator.statement.overpass
+
+
+  // Example 5
+
+  [out:csv(::"type",::"id", name, admin_level,::"count")];
+  area[name="California"][boundary];
+   rel(area)[boundary][admin_level=6];
+   map_to_area;
+   foreach->.d(
+     (.d;);out;
+     (node(area.d)[amenity=bicycle_parking];
+      way(area.d)[amenity=bicycle_parking];
+      relation(area.d)[amenity=bicycle_parking];);
+     out count;
+   );
+
+  // Example 6
+
+  area[name="London"]->.a;
+  way(area.a)[highway=primary]->.primary_roads;
+  rel(area.a)[route=bus];
+  way(r)->.bus_routes;
+  (.primary_roads; - .bus_routes;);
+  out body;
+//^^^ keyword.control.flow.return.overpass
+//    ^^^^ support.type.overpass
+//        ^ punctuation.terminator.statement.overpass
+  >;
+//^ keyword.operator.pipe.overpass
+// ^ punctuation.terminator.statement.overpass
+  out skel qt;
+//^^^ keyword.control.flow.return.overpass
+//    ^^^^ support.type.overpass
+//         ^^ keyword.other.overpass
+//           ^ punctuation.terminator.statement.overpass
+
+
+  // Example 7
+
+  area[name="Paris"]->.a;
+  (
+    node(area.a)["tourism"="museum"];
+    way(area.a)["tourism"="museum"];
+  )->.museums;
+
+  (
+    node(around.museums:50)["highway"="bus_stop"];
+    way(around.museums:50)["highway"="bus_stop"];
+    node(around.museums:50)["railway"="tram_stop"];
+    way(around.museums:50)["railway"="tram_stop"];
+    node(around.museums:50)["railway"="subway_entrance"];
+    way(around.museums:50)["railway"="subway_entrance"];
+  );
+
+  /*added by auto repair*/
+  (._;>;);
+  /*end of auto repair*/
+  out meta;
+
+  // Example 8
+
+  area[name="Berlin"]->.a;
+  way(area.a)[highway=pedestrian]->.pedestrian_streets;
+  way(area.a)[amenity=cafe]->.cafes;
+  way.pedestrian_streets(around.cafes:20);
+  /*added by auto repair*/
+  (._;>;);
+  /*end of auto repair*/
+  out meta;
+
+  // Example 9
+
+  area[admin_level=4]["name"="Colorado"]->.boundaryarea;
+  ( node(area.boundaryarea)["leisure"="nature_reserve"];
+    way(area.boundaryarea)["leisure"="nature_reserve"];
+    >;
+  ) ->.a;
+  .a is_in -> .b;
+  way.b["route"="hiking"] -> .hiking_routes;
+  (way(area.boundaryarea)(if: length() > 10000)["leisure"="nature_reserve"]; - .hiking_routes;);
+  /*added by auto repair*/
+  (._;>;);
+  /*end of auto repair*/
+  out;
+
+  // Example 10
+
+  area[name="Berlin"]->.region;
+  rel(area.region)[leisure=park];
+  map_to_area -> .parks;
+  node(area.parks)[leisure=playground];
+  way(area.parks)[leisure=playground];
+  out;
+  node(area.parks)[leisure=playground] -> .playgrounds;
+  node.playgrounds(around:500);
+  out ;
+
+
+  // Example 11
+
+  way["aeroway"="runway"]["surface"="paved"](if: length() > 3000);
+  /*added by auto repair*/
+  (._;>;);
+  /*end of auto repair*/
+  out meta;
+
+  // Example 12
+
+  area[name="San Francisco"]->.sf;
+  node(area.sf)["amenity"="bicycle_rental"]->.bike_rental;
+  node(around.bike_rental:50)["railway"="station"]->.station;
+  node(around.station:50)["amenity"="bicycle_rental"]->.filtered_bicycle_rental;
+
+  (
+//^ meta.block.overpass punctuation.section.block.begin.overpass
+    .filtered_bicycle_rental;
+    .station;
+  );
+//^ meta.block.overpass
+//^ punctuation.section.block.end.overpass
+// ^ punctuation.terminator.statement.overpass
+  out meta;
