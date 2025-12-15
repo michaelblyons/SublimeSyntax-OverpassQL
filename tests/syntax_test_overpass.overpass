@@ -168,6 +168,9 @@
   area[name="Köln"]->.b;
   rel(area.b)[name="Innenstadt"];
   map_to_area -> .a;
+//^^^^^^^^^^^ meta.function-call.overpass support.function.overpass
+//            ^^ keyword.operator.assignment.overpass
+//                 ^ punctuation.terminator.statement.overpass
   node(area.a)[amenity=pub];
   out meta;
 
@@ -190,6 +193,9 @@
 
   rel(area.boundaryarea)[admin_level=8];
   map_to_area -> .bllf;
+//^^^^^^^^^^^ meta.function-call.overpass support.function.overpass
+//            ^^ keyword.operator.assignment.overpass
+//                    ^ punctuation.terminator.statement.overpass
 
   (.bllf; - .bf; );
   rel(pivot);
@@ -202,6 +208,8 @@
   area[name="Saarland"][boundary];
    rel(area)[boundary][admin_level=6];
    map_to_area;
+// ^^^^^^^^^^^ meta.function-call.overpass support.function.overpass
+//            ^ punctuation.terminator.statement.overpass
    foreach->.d(
      (.d;);out; 
      (node(area.d)[amenity=pharmacy];

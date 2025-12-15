@@ -29,6 +29,9 @@ contexts:
     - include: settings
     - include: block-statements
     - include: standalone-statements
+    - match: \bmap_to_area\b
+      scope: meta.function-call.overpass support.function.overpass
+      push: maybe-assignment
 
 ###[ SETS ]####################################################################
 
