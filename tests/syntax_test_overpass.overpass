@@ -674,3 +674,41 @@
 /*^ punctuation.section.block.end.overpass */
 /* ^ punctuation.terminator.statement.overpass */
   out meta;
+
+  {{style:
+/*^^^^^^^^ meta.block.style.overpass */
+/*^^ punctuation.section.block.begin.overpass */
+/*  ^^^^^ keyword.other.overpass */
+/*       ^ punctuation.separator.key-value.overpass */
+
+    /* default line width */
+    way {
+      width: 4;
+      opacity: 0.85;
+/*^^^^^^^^^^^^^^^^^^ source.css.embedded.overpass */
+/*           ^ punctuation */
+    }
+
+    /* Green group: excellent, very_good, good */
+    way[highway=footway][smoothness=excellent],
+    way[highway=footway][smoothness=very_good],
+    way[highway=footway][smoothness=good] {
+      color: #2ecc71;   /* bright green */
+    }
+
+    /* Yellow group: intermediate, bad */
+    way[highway=footway][smoothness=intermediate],
+    way[highway=footway][smoothness=bad] {
+      color: #f1c40f;   /* vivid yellow */
+    }
+
+    /* Red group: very_bad, horrible, very_horrible */
+    way[highway=footway][smoothness=very_bad],
+    way[highway=footway][smoothness=horrible],
+    way[highway=footway][smoothness=very_horrible] {
+      color: #e74c3c;   /* strong red */
+    }
+  }}
+/*^^ meta.block.style.overpass */
+/*^^ punctuation.section.block.end.overpass */
+/*  ^ - source.css  */

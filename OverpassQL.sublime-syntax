@@ -180,9 +180,18 @@ contexts:
 ###[ STYLES ]##################################################################
 
   styles:
-    - match: '{{'
+    - match: ({{)(style)(:)(\s*$)?
+      scope: meta.block.style.overpass
+      captures:
+        1: punctuation.section.block.begin.overpass
+        2: keyword.other.overpass
+        3: punctuation.separator.key-value.overpass
       embed: scope:source.css
-      escape: '}}'
+      embed_scope: meta.block.style.overpass source.css.embedded.overpass
+      escape: (^\s*(}}))
+      escape_captures:
+        1: meta.block.style.overpass
+        2: punctuation.section.block.end.overpass
 
 ###[ OPERATORS ]###############################################################
 
