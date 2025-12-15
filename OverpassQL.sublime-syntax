@@ -35,8 +35,8 @@ contexts:
     - include: expressions
 
   expressions:
-    - include: operators
     - include: literals
+    - include: operators
 
 ###[ SETS ]####################################################################
 
@@ -204,6 +204,8 @@ contexts:
 ###[ LITERALS ]################################################################
 
   literals:
+    - include: dates
+    - include: numbers
     - include: strings
 
   strings:
@@ -255,8 +257,22 @@ contexts:
         1: meta.string.overpass string.quoted.double.overpass punctuation.definition.string.end.overpass
     - include: else-pop
 
-  numbers: []
-  dates: []
+  numbers:
+    - match: \d+(\.)\d*
+      scope: meta.number.float.decimal.overpass constant.numeric.value.overpass
+      captures:
+        1: punctuation.separator.decimal.overpass
+    - match: \d+
+      scope: meta.number.integer.decimal.overpass constant.numeric.value.overpass
+
+  dates:
+    - match: (\d{4}-{{month}}-{{day}})(T)({{hour}}:{{minute}}:{{minute}})(Z)
+      scope: meta.number.date.overpass
+      captures:
+        1: constant.numeric.date.overpass
+        2: punctuation.separator.sequence.overpass
+        3: constant.numeric.time.overpass
+        4: punctuation.separator.sequence.overpass
 
 ###[ COMMENTS ]################################################################
 
@@ -295,3 +311,11 @@ contexts:
   else-pop:
     - match: (?=\S)
       pop: 1
+
+###############################################################################
+
+variables:
+  month: (?:0[1-9]|1[0-2])
+  day: (?:0[1-9]|[12][0-9]|3[01])
+  hour: (?:[01]\d|2[0-3])
+  minute: (?:[0-5]\d)
