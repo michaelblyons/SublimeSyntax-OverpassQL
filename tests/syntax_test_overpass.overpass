@@ -131,7 +131,7 @@
 /*          ^ keyword.operator.logical.overpass */
 /*           ^^^^ meta.string.overpass string.quoted.double.overpass */
 /*           ^ punctuation.definition.string.begin.overpass */
-/*            ^^ source.regexp.embedded.overpass meta.mode.basic.regexp keyword.control.anchor.regexp */
+/*            ^^ source.regexp.embedded.overpass keyword.control */
 /*              ^ punctuation.definition.string.end.overpass */
 /*               ^ punctuation.definition.brackets.end.overpass */
 /*                ^ punctuation.terminator.overpass */
@@ -146,12 +146,12 @@
 /*     ^ keyword.operator.logical.overpass */
 /*      ^^^^ meta.string.overpass string.quoted.double.overpass */
 /*      ^ punctuation.definition.string.begin.overpass */
-/*       ^^ source.regexp.embedded.overpass meta.mode.basic.regexp keyword.control.anchor.regexp */
+/*       ^^ source.regexp.embedded.overpass keyword.control */
 /*         ^ punctuation.definition.string.end.overpass */
 /*          ^ keyword.operator.logical.overpass */
 /*           ^^^ meta.string.overpass string.quoted.double.overpass */
 /*           ^ punctuation.definition.string.begin.overpass */
-/*            ^ source.regexp.embedded.overpass meta.mode.basic.regexp keyword.other.any.regexp */
+/*            ^ source.regexp.embedded.overpass keyword.other.any.regexp */
 /*             ^ punctuation.definition.string.end.overpass */
 /*              ^ punctuation.definition.brackets.end.overpass */
 /*               ^ punctuation.terminator.overpass */
@@ -228,9 +228,9 @@
 /*           ^ keyword.operator.logical.overpass */
 /*            ^^^^^^^ meta.string.overpass string.quoted.double.overpass */
 /*            ^ punctuation.definition.string.begin.overpass */
-/*             ^^^^^ source.regexp.embedded.overpass meta.mode.basic.regexp */
-/*             ^ keyword.control.anchor.regexp */
-/*                 ^ keyword.control.anchor.regexp */
+/*             ^^^^^ source.regexp.embedded.overpass */
+/*             ^ keyword.control */
+/*                 ^ keyword.control */
 /*                  ^ punctuation.definition.string.end.overpass */
 /*                   ^ punctuation.definition.brackets.end.overpass */
 /*                    ^ punctuation.terminator.overpass */
@@ -247,8 +247,8 @@
 /*           ^ keyword.operator.logical.overpass */
 /*            ^^^^^^ meta.string.overpass string.quoted.double.overpass */
 /*            ^ punctuation.definition.string.begin.overpass */
-/*             ^^^^ source.regexp.embedded.overpass meta.mode.basic.regexp */
-/*             ^ keyword.control.anchor.regexp */
+/*             ^^^^ source.regexp.embedded.overpass */
+/*             ^ keyword.control */
 /*                 ^ punctuation.definition.string.end.overpass */
 /*                  ^ punctuation.definition.brackets.end.overpass */
 /*                   ^ punctuation.terminator.overpass */
@@ -265,8 +265,8 @@
 /*           ^ keyword.operator.logical.overpass */
 /*            ^^^^^^ meta.string.overpass string.quoted.double.overpass */
 /*            ^ punctuation.definition.string.begin.overpass */
-/*             ^^^^ source.regexp.embedded.overpass meta.mode.basic.regexp */
-/*                ^ keyword.control.anchor.regexp */
+/*             ^^^^ source.regexp.embedded.overpass */
+/*                ^ keyword.control */
 /*                 ^ punctuation.definition.string.end.overpass */
 /*                  ^ punctuation.definition.brackets.end.overpass */
 /*                   ^ punctuation.terminator.overpass */
@@ -283,7 +283,7 @@
 /*           ^ keyword.operator.logical.overpass */
 /*            ^^^^^ meta.string.overpass string.quoted.double.overpass */
 /*            ^ punctuation.definition.string.begin.overpass */
-/*             ^^^ source.regexp.embedded.overpass meta.mode.basic.regexp */
+/*             ^^^ source.regexp.embedded.overpass */
 /*                ^ punctuation.definition.string.end.overpass */
 /*                 ^ punctuation.definition.brackets.end.overpass */
 /*                  ^ punctuation.terminator.overpass */
@@ -300,7 +300,7 @@
 /*           ^ keyword.operator.logical.overpass */
 /*            ^^^^ meta.string.overpass string.quoted.double.overpass */
 /*            ^ punctuation.definition.string.begin.overpass */
-/*             ^^ source.regexp.embedded.overpass meta.mode.basic.regexp */
+/*             ^^ source.regexp.embedded.overpass */
 /*             ^ keyword.other.any.regexp */
 /*              ^ keyword.operator.quantifier.regexp */
 /*               ^ punctuation.definition.string.end.overpass */
@@ -319,7 +319,7 @@
 /*           ^^ keyword.operator.logical.overpass */
 /*             ^^^^ meta.string.overpass string.quoted.double.overpass */
 /*             ^ punctuation.definition.string.begin.overpass */
-/*              ^^ source.regexp.embedded.overpass meta.mode.basic.regexp */
+/*              ^^ source.regexp.embedded.overpass */
 /*              ^ keyword.other.any.regexp */
 /*               ^ keyword.operator.quantifier.regexp */
 /*                ^ punctuation.definition.string.end.overpass */
@@ -353,7 +353,7 @@
 /*           ^^ keyword.operator.logical.overpass */
 /*             ^^^^^ meta.string.overpass string.quoted.double.overpass */
 /*             ^ punctuation.definition.string.begin.overpass */
-/*              ^^^ source.regexp.embedded.overpass meta.mode.basic.regexp */
+/*              ^^^ source.regexp.embedded.overpass */
 /*                 ^ punctuation.definition.string.end.overpass */
 /*                  ^ punctuation.definition.brackets.end.overpass */
 /*                   ^ punctuation.terminator.overpass */
@@ -368,7 +368,7 @@
 /*           ^^ keyword.operator.logical.overpass */
 /*             ^^^^^ meta.string.overpass string.quoted.double.overpass */
 /*             ^ punctuation.definition.string.begin.overpass */
-/*              ^^^ source.regexp.embedded.overpass meta.mode.basic.regexp */
+/*              ^^^ source.regexp.embedded.overpass */
 /*                 ^ punctuation.definition.string.end.overpass */
 /*                    ^ punctuation.definition.brackets.end.overpass */
 /*                     ^ punctuation.terminator.overpass */
