@@ -22,31 +22,6 @@ contexts:
     - include: statements
     - include: styles
 
-  comments:
-    - include: comment-line
-    - include: comment-block
-
-  comment-line:
-    - match: //
-      scope: punctuation.definition.comment.begin.overpass
-      push: comment-line-body
-
-  comment-line-body:
-    - meta_scope: comment.line.double-slash.overpass
-    - match: \n
-      pop: 1
-
-  comment-block:
-    - match: /\*
-      scope: punctuation.definition.comment.begin.overpass
-      push: comment-block-body
-
-  comment-block-body:
-    - meta_scope: comment.block.overpass
-    - match: \*/
-      scope: punctuation.definition.comment.end.overpass
-      pop: 1
-
   statements:
     - match: ;
       scope: punctuation.terminator.statement.overpass
@@ -249,6 +224,33 @@ contexts:
 
   numbers: []
   dates: []
+
+###[ COMMENTS ]################################################################
+
+  comments:
+    - include: comment-line
+    - include: comment-block
+
+  comment-line:
+    - match: //
+      scope: punctuation.definition.comment.begin.overpass
+      push: comment-line-body
+
+  comment-line-body:
+    - meta_scope: comment.line.double-slash.overpass
+    - match: \n
+      pop: 1
+
+  comment-block:
+    - match: /\*
+      scope: punctuation.definition.comment.begin.overpass
+      push: comment-block-body
+
+  comment-block-body:
+    - meta_scope: comment.block.overpass
+    - match: \*/
+      scope: punctuation.definition.comment.end.overpass
+      pop: 1
 
 ###[ UTILITY ]#################################################################
 
