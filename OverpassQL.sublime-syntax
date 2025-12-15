@@ -82,7 +82,7 @@ contexts:
     - meta_scope: meta.block.overpass
     - match: \)
       scope: punctuation.section.block.end.overpass
-      pop: 1
+      set: maybe-assignment
     - include: statements
 
   if-statements: []

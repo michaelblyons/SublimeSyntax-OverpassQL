@@ -180,6 +180,10 @@
 //  ^ keyword.operator.pipe.overpass
 //   ^ punctuation.terminator.statement.overpass
   ) ->.a;
+//^ meta.block.overpass
+//^ punctuation.section.block.end.overpass
+//  ^^ keyword.operator.assignment.overpass
+//      ^ punctuation.terminator.statement.overpass
 
   .a is_in -> .b;
   area.b[admin_level=8] -> .bf;
