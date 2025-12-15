@@ -14,8 +14,11 @@ in [Sublime Text][st].
 
 - Support for basic query statements
 - Support for logical block statements
+- Support for literals
+    * Naive support for regular expression string after `~` and `!~`
+- Support for operators
+- Modest support for sets
 - Minimal support for settings
-- Minimal support for literals (currently just quoted strings)
 - Naive support for styles (delegates to CSS)
 
 
@@ -28,9 +31,6 @@ in [Sublime Text][st].
 
 ### Language syntax
 
-- Support more literals (numbers and dates; probably not unquoted strings)
-- Support operators
-- Support sets
 - Support functions
 - Support flow control
 - Support intersection
