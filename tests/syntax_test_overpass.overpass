@@ -22,7 +22,7 @@
 //    ^^^^^^^^^^ meta.brackets.setting.overpass
 //    ^ punctuation.definition.brackets.begin.overpass
 //         ^ keyword.operator.logical.overpass
-//             ^ punctuation.definition.setting.end.overpass
+//             ^ punctuation.definition.brackets.end.overpass
 //              ^ punctuation.terminator.overpass
   node[name='Foo'];
 //^^^^^^^^^^^^^^^^^ meta.statement.overpass
@@ -33,7 +33,7 @@
 //          ^^^^^ string.quoted.single.overpass
 //          ^ punctuation.definition.string.begin.overpass
 //              ^ punctuation.definition.string.end.overpass
-//               ^ punctuation.definition.setting.end.overpass
+//               ^ punctuation.definition.brackets.end.overpass
 //                ^ punctuation.terminator.overpass
   node[name="Foo"];
 //^^^^^^^^^^^^^^^^^ meta.statement.overpass
@@ -44,7 +44,7 @@
 //          ^^^^^ string.quoted.double.overpass
 //          ^ punctuation.definition.string.begin.overpass
 //              ^ punctuation.definition.string.end.overpass
-//               ^ punctuation.definition.setting.end.overpass
+//               ^ punctuation.definition.brackets.end.overpass
 //                ^ punctuation.terminator.overpass
   node['name'="Foo"];
 //^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
@@ -58,7 +58,7 @@
 //            ^^^^^ string.quoted.double.overpass
 //            ^ punctuation.definition.string.begin.overpass
 //                ^ punctuation.definition.string.end.overpass
-//                 ^ punctuation.definition.setting.end.overpass
+//                 ^ punctuation.definition.brackets.end.overpass
 //                  ^ punctuation.terminator.overpass
   node["name"="Foo"];
 //^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
@@ -72,7 +72,7 @@
 //            ^^^^^ string.quoted.double.overpass
 //            ^ punctuation.definition.string.begin.overpass
 //                ^ punctuation.definition.string.end.overpass
-//                 ^ punctuation.definition.setting.end.overpass
+//                 ^ punctuation.definition.brackets.end.overpass
 //                  ^ punctuation.terminator.overpass
   node["name"='Foo'];
 //^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
@@ -86,7 +86,7 @@
 //            ^^^^^ string.quoted.single.overpass
 //            ^ punctuation.definition.string.begin.overpass
 //                ^ punctuation.definition.string.end.overpass
-//                 ^ punctuation.definition.setting.end.overpass
+//                 ^ punctuation.definition.brackets.end.overpass
 //                  ^ punctuation.terminator.overpass
 
   node[name="Foo Street"];
@@ -98,7 +98,7 @@
 //          ^^^^^^^^^^^^ string.quoted.double.overpass
 //          ^ punctuation.definition.string.begin.overpass
 //                     ^ punctuation.definition.string.end.overpass
-//                      ^ punctuation.definition.setting.end.overpass
+//                      ^ punctuation.definition.brackets.end.overpass
 //                       ^ punctuation.terminator.overpass
   node["name:fr"="Rue Feau"];
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
@@ -112,7 +112,7 @@
 //               ^^^^^^^^^^ string.quoted.double.overpass
 //               ^ punctuation.definition.string.begin.overpass
 //                        ^ punctuation.definition.string.end.overpass
-//                         ^ punctuation.definition.setting.end.overpass
+//                         ^ punctuation.definition.brackets.end.overpass
 //                          ^ punctuation.terminator.overpass
 
   node[power=""];          // not supported
@@ -124,7 +124,7 @@
 //           ^^ string.quoted.double.overpass
 //           ^ punctuation.definition.string.begin.overpass
 //            ^ punctuation.definition.string.end.overpass
-//             ^ punctuation.definition.setting.end.overpass
+//             ^ punctuation.definition.brackets.end.overpass
 //              ^ punctuation.terminator.overpass
 //                         ^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass
 //                         ^^ punctuation.definition.comment.begin.overpass
@@ -134,42 +134,282 @@
 //    ^^^^^^^^^^^^ meta.brackets.setting.overpass
 //    ^ punctuation.definition.brackets.begin.overpass
 //          ^ keyword.operator.logical.overpass
-//           ^^^^ string.quoted.double.overpass
+//           ^^^^ meta.string.overpass string.quoted.double.overpass
 //           ^ punctuation.definition.string.begin.overpass
+//            ^^ source.regexp.embedded.overpass meta.mode.basic.regexp keyword.control.anchor.regexp
 //              ^ punctuation.definition.string.end.overpass
-//               ^ punctuation.definition.setting.end.overpass
+//               ^ punctuation.definition.brackets.end.overpass
 //                ^ punctuation.terminator.overpass
 //                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass
 //                         ^^ punctuation.definition.comment.begin.overpass
 
   node[~"^$"~"."];         // find nodes with empty key ("") and any value
+//^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^ keyword.operator.logical.overpass
+//      ^^^^ meta.string.overpass string.quoted.double.overpass
+//      ^ punctuation.definition.string.begin.overpass
+//       ^^ source.regexp.embedded.overpass meta.mode.basic.regexp keyword.control.anchor.regexp
+//         ^ punctuation.definition.string.end.overpass
+//          ^ keyword.operator.logical.overpass
+//           ^^^ meta.string.overpass string.quoted.double.overpass
+//           ^ punctuation.definition.string.begin.overpass
+//            ^ source.regexp.embedded.overpass meta.mode.basic.regexp keyword.other.any.regexp
+//             ^ punctuation.definition.string.end.overpass
+//              ^ punctuation.definition.brackets.end.overpass
+//               ^ punctuation.terminator.overpass
+//                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass
+//                         ^^ punctuation.definition.comment.begin.overpass
 
   node["name"];
+//^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.double.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^ punctuation.definition.brackets.end.overpass
+//            ^ punctuation.terminator.overpass
   node['name'];
+//^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.single.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^ punctuation.definition.brackets.end.overpass
+//            ^ punctuation.terminator.overpass
   node[name];
+//^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//         ^ punctuation.definition.brackets.end.overpass
+//          ^ punctuation.terminator.overpass
 
   node[!"name"];
+//^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^ keyword.operator.logical.overpass
+//      ^^^^^^ string.quoted.double.overpass
+//      ^ punctuation.definition.string.begin.overpass
+//           ^ punctuation.definition.string.end.overpass
+//            ^ punctuation.definition.brackets.end.overpass
+//             ^ punctuation.terminator.overpass
   node[!'name'];
+//^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^ keyword.operator.logical.overpass
+//      ^^^^^^ string.quoted.single.overpass
+//      ^ punctuation.definition.string.begin.overpass
+//           ^ punctuation.definition.string.end.overpass
+//            ^ punctuation.definition.brackets.end.overpass
+//             ^ punctuation.terminator.overpass
   node[!name];
+//^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^ keyword.operator.logical.overpass
+//          ^ punctuation.definition.brackets.end.overpass
+//           ^ punctuation.terminator.overpass
 
   node["name"~"^Foo$"];   // Finds nodes, where the tag name matches exactly Foo - identical to node["name"="foo"];
+//^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.double.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^ keyword.operator.logical.overpass
+//            ^^^^^^^ meta.string.overpass string.quoted.double.overpass
+//            ^ punctuation.definition.string.begin.overpass
+//             ^^^^^ source.regexp.embedded.overpass meta.mode.basic.regexp
+//             ^ keyword.control.anchor.regexp
+//                 ^ keyword.control.anchor.regexp
+//                  ^ punctuation.definition.string.end.overpass
+//                   ^ punctuation.definition.brackets.end.overpass
+//                    ^ punctuation.terminator.overpass
+//                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass
+//                        ^^ punctuation.definition.comment.begin.overpass
   node["name"~"^Foo"];    // Finds nodes, where the tag name starts with Foo
+//^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.double.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^ keyword.operator.logical.overpass
+//            ^^^^^^ meta.string.overpass string.quoted.double.overpass
+//            ^ punctuation.definition.string.begin.overpass
+//             ^^^^ source.regexp.embedded.overpass meta.mode.basic.regexp
+//             ^ keyword.control.anchor.regexp
+//                 ^ punctuation.definition.string.end.overpass
+//                  ^ punctuation.definition.brackets.end.overpass
+//                   ^ punctuation.terminator.overpass
+//                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass
+//                        ^^ punctuation.definition.comment.begin.overpass
   node["name"~"Foo$"];    // Finds nodes, where the tag name ends with Foo
+//^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.double.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^ keyword.operator.logical.overpass
+//            ^^^^^^ meta.string.overpass string.quoted.double.overpass
+//            ^ punctuation.definition.string.begin.overpass
+//             ^^^^ source.regexp.embedded.overpass meta.mode.basic.regexp
+//                ^ keyword.control.anchor.regexp
+//                 ^ punctuation.definition.string.end.overpass
+//                  ^ punctuation.definition.brackets.end.overpass
+//                   ^ punctuation.terminator.overpass
+//                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass
+//                        ^^ punctuation.definition.comment.begin.overpass
   node["name"~"Foo"];     // Finds nodes, where the tag name contains the substring Foo anywhere in the tag value
+//^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.double.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^ keyword.operator.logical.overpass
+//            ^^^^^ meta.string.overpass string.quoted.double.overpass
+//            ^ punctuation.definition.string.begin.overpass
+//             ^^^ source.regexp.embedded.overpass meta.mode.basic.regexp
+//                ^ punctuation.definition.string.end.overpass
+//                 ^ punctuation.definition.brackets.end.overpass
+//                  ^ punctuation.terminator.overpass
+//                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass
+//                        ^^ punctuation.definition.comment.begin.overpass
   node["name"~".*"];      // Finds nodes, where the tag name matches anything, equal to node["name"];
+//^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.double.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^ keyword.operator.logical.overpass
+//            ^^^^ meta.string.overpass string.quoted.double.overpass
+//            ^ punctuation.definition.string.begin.overpass
+//             ^^ source.regexp.embedded.overpass meta.mode.basic.regexp
+//             ^ keyword.other.any.regexp
+//              ^ keyword.operator.quantifier.regexp
+//               ^ punctuation.definition.string.end.overpass
+//                ^ punctuation.definition.brackets.end.overpass
+//                 ^ punctuation.terminator.overpass
+//                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass
+//                        ^^ punctuation.definition.comment.begin.overpass
   node["name"!~".*"];    // Finds nodes without name tag; does not have key name - identical to node[!"name"];
+//^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.double.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^^ keyword.operator.logical.overpass
+//             ^^^^ meta.string.overpass string.quoted.double.overpass
+//             ^ punctuation.definition.string.begin.overpass
+//              ^^ source.regexp.embedded.overpass meta.mode.basic.regexp
+//              ^ keyword.other.any.regexp
+//               ^ keyword.operator.quantifier.regexp
+//                ^ punctuation.definition.string.end.overpass
+//                 ^ punctuation.definition.brackets.end.overpass
+//                  ^ punctuation.terminator.overpass
+//                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass
+//                       ^^ punctuation.definition.comment.begin.overpass
 
   node["name"!="Foo"];
+//^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.double.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^^ keyword.operator.logical.overpass
+//             ^^^^^ string.quoted.double.overpass
+//             ^ punctuation.definition.string.begin.overpass
+//                 ^ punctuation.definition.string.end.overpass
+//                  ^ punctuation.definition.brackets.end.overpass
+//                   ^ punctuation.terminator.overpass
   node["name"!~"Foo"];
+//^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.double.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^^ keyword.operator.logical.overpass
+//             ^^^^^ meta.string.overpass string.quoted.double.overpass
+//             ^ punctuation.definition.string.begin.overpass
+//              ^^^ source.regexp.embedded.overpass meta.mode.basic.regexp
+//                 ^ punctuation.definition.string.end.overpass
+//                  ^ punctuation.definition.brackets.end.overpass
+//                   ^ punctuation.terminator.overpass
   node["name"!~"Foo",i];
+//^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//     ^^^^^^ string.quoted.double.overpass
+//     ^ punctuation.definition.string.begin.overpass
+//          ^ punctuation.definition.string.end.overpass
+//           ^^ keyword.operator.logical.overpass
+//             ^^^^^ meta.string.overpass string.quoted.double.overpass
+//             ^ punctuation.definition.string.begin.overpass
+//              ^^^ source.regexp.embedded.overpass meta.mode.basic.regexp
+//                 ^ punctuation.definition.string.end.overpass
+//                    ^ punctuation.definition.brackets.end.overpass
+//                     ^ punctuation.terminator.overpass
 
   // Example 1
 
   area[name="Köln"]->.b;
+//^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//         ^ keyword.operator.logical.overpass
+//          ^^^^^^ string.quoted.double.overpass
+//          ^ punctuation.definition.string.begin.overpass
+//               ^ punctuation.definition.string.end.overpass
+//                ^ punctuation.definition.brackets.end.overpass
+//                 ^^ keyword.operator.assignment.overpass
+//                   ^^ variable.other.readwrite.overpass
+//                   ^ punctuation.definition.variable.begin.overpass
+//                     ^ punctuation.terminator.overpass
   rel(area.b)[name="Innenstadt"];
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^ entity.name.tag.overpass
+//           ^^^^^^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//           ^ punctuation.definition.brackets.begin.overpass
+//                ^ keyword.operator.logical.overpass
+//                 ^^^^^^^^^^^^ string.quoted.double.overpass
+//                 ^ punctuation.definition.string.begin.overpass
+//                            ^ punctuation.definition.string.end.overpass
+//                             ^ punctuation.definition.brackets.end.overpass
+//                              ^ punctuation.terminator.overpass
   map_to_area -> .a;
 //^^^^^^^^^^^ meta.function-call.overpass support.function.overpass
 //            ^^ keyword.operator.assignment.overpass
+//               ^^ variable.other.readwrite.overpass
+//               ^ punctuation.definition.variable.begin.overpass
 //                 ^ punctuation.terminator.statement.overpass
   node(area.a)[amenity=pub];
   out meta;
@@ -177,6 +417,28 @@
   // Example 2
 
   area[admin_level=4]["name"="Hessen"][boundary=administrative]->.boundaryarea;
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//                ^ keyword.operator.logical.overpass
+//                  ^ punctuation.definition.brackets.end.overpass
+//                   ^ punctuation.definition.brackets.begin.overpass
+//                    ^^^^^^ string.quoted.double.overpass
+//                    ^ punctuation.definition.string.begin.overpass
+//                         ^ punctuation.definition.string.end.overpass
+//                          ^ keyword.operator.logical.overpass
+//                           ^^^^^^^^ string.quoted.double.overpass
+//                           ^ punctuation.definition.string.begin.overpass
+//                                  ^ punctuation.definition.string.end.overpass
+//                                   ^ punctuation.definition.brackets.end.overpass
+//                                    ^ punctuation.definition.brackets.begin.overpass
+//                                             ^ keyword.operator.logical.overpass
+//                                                            ^ punctuation.definition.brackets.end.overpass
+//                                                             ^^ keyword.operator.assignment.overpass
+//                                                               ^^^^^^^^^^^^^ variable.other.readwrite.overpass
+//                                                               ^ punctuation.definition.variable.begin.overpass
+//                                                                            ^ punctuation.terminator.overpass
   ( node(area.boundaryarea)["amenity"="fire_station"];
     way(area.boundaryarea)["amenity"="fire_station"];
     >;
@@ -221,10 +483,22 @@
   // Example 4
 
   rel(62716)->.b;
+//^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^ entity.name.tag.overpass
+//          ^^ keyword.operator.assignment.overpass
+//            ^^ variable.other.readwrite.overpass
+//            ^ punctuation.definition.variable.begin.overpass
+//              ^ punctuation.terminator.overpass
     .b out;
+//  ^^ variable.other.readwrite.overpass
+//  ^ punctuation.definition.variable.begin.overpass
 //     ^^^ keyword.control.flow.return.overpass
 //        ^ punctuation.terminator.statement.overpass
     .b map_to_area;
+//  ^^ variable.other.readwrite.overpass
+//  ^ punctuation.definition.variable.begin.overpass
+//     ^^^^^^^^^^^ meta.function-call.overpass support.function.overpass
+//                ^ punctuation.terminator.statement.overpass
     out;
 //  ^^^ keyword.control.flow.return.overpass
 //     ^ punctuation.terminator.statement.overpass
@@ -284,6 +558,15 @@
 
   /*added by auto repair*/
   (._;>;);
+//^^^^^^^ meta.block.overpass
+//^ punctuation.section.block.begin.overpass
+// ^^ variable.language.overpass
+// ^ punctuation.definition.variable.begin.overpass
+//   ^ punctuation.terminator.statement.overpass
+//    ^ keyword.operator.pipe.overpass
+//     ^ punctuation.terminator.statement.overpass
+//      ^ punctuation.section.block.end.overpass
+//       ^ punctuation.terminator.statement.overpass
   /*end of auto repair*/
   out meta;
 
@@ -309,15 +592,39 @@
   way.b["route"="hiking"] -> .hiking_routes;
   (way(area.boundaryarea)(if: length() > 10000)["leisure"="nature_reserve"]; - .hiking_routes;);
   /*added by auto repair*/
+//^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.overpass
+//^^ punctuation.definition.comment.begin.overpass
+//                      ^^ punctuation.definition.comment.end.overpass
   (._;>;);
   /*end of auto repair*/
+//^^^^^^^^^^^^^^^^^^^^^^ comment.block.overpass
+//^^ punctuation.definition.comment.begin.overpass
+//                    ^^ punctuation.definition.comment.end.overpass
   out;
 
   // Example 10
 
   area[name="Berlin"]->.region;
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass
+//^^^^ entity.name.tag.overpass
+//    ^^^^^^^^^^^^^^^ meta.brackets.setting.overpass
+//    ^ punctuation.definition.brackets.begin.overpass
+//         ^ keyword.operator.logical.overpass
+//          ^^^^^^^^ string.quoted.double.overpass
+//          ^ punctuation.definition.string.begin.overpass
+//                 ^ punctuation.definition.string.end.overpass
+//                  ^ punctuation.definition.brackets.end.overpass
+//                   ^^ keyword.operator.assignment.overpass
+//                     ^^^^^^^ variable.other.readwrite.overpass
+//                     ^ punctuation.definition.variable.begin.overpass
+//                            ^ punctuation.terminator.overpass
   rel(area.region)[leisure=park];
   map_to_area -> .parks;
+//^^^^^^^^^^^ meta.function-call.overpass support.function.overpass
+//            ^^ keyword.operator.assignment.overpass
+//               ^^^^^^ variable.other.readwrite.overpass
+//               ^ punctuation.definition.variable.begin.overpass
+//                     ^ punctuation.terminator.statement.overpass
   node(area.parks)[leisure=playground];
   way(area.parks)[leisure=playground];
   out;
@@ -344,7 +651,15 @@
   (
 //^ meta.block.overpass punctuation.section.block.begin.overpass
     .filtered_bicycle_rental;
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.overpass
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ variable.other.readwrite.overpass
+//  ^ punctuation.definition.variable.begin.overpass
+//                          ^ punctuation.terminator.statement.overpass
     .station;
+//^^^^^^^^^^^ meta.block.overpass
+//  ^^^^^^^^ variable.other.readwrite.overpass
+//  ^ punctuation.definition.variable.begin.overpass
+//          ^ punctuation.terminator.statement.overpass
   );
 //^ meta.block.overpass
 //^ punctuation.section.block.end.overpass

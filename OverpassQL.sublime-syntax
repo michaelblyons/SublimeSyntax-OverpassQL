@@ -32,12 +32,35 @@ contexts:
     - match: \bmap_to_area\b
       scope: meta.function-call.overpass support.function.overpass
       push: maybe-assignment
+    - include: expressions
+
+  expressions:
+    - include: operators
+    - include: literals
 
 ###[ SETS ]####################################################################
 
   sets:
-    - match: \b_\b
+    - match: (\.)_\b
       scope: variable.language.overpass
+      captures:
+        1: punctuation.definition.variable.begin.overpass
+    - match: (\.)\w+\b
+      scope: variable.other.readwrite.overpass
+      captures:
+        1: punctuation.definition.variable.begin.overpass
+
+  maybe-assignment:
+    - match: (?=;)
+      pop: 1
+    - match: '->'
+      scope: keyword.operator.assignment.overpass
+      push: assignment
+
+  assignment:
+    - match: (?=;)
+      pop: 1
+    - include: sets
 
 ###[ SETTINGS ]################################################################
 
@@ -145,37 +168,14 @@ contexts:
 
     - match: \[
       scope: punctuation.definition.brackets.begin.overpass
-      push: [query-filter-body, query-filter-value, query-filter-key]
-
-  maybe-assignment:
-    - match: (?=;)
-      pop: 1
-    - match: '->'
-      scope: keyword.operator.assignment.overpass
-      push: assignment
-
-  assignment:
-    - match: (?=;)
-      pop: 1
+      push: query-filter-body
 
   query-filter-body:
     - meta_scope: meta.brackets.setting.overpass
     - match: \]
-      scope: punctuation.definition.setting.end.overpass
+      scope: punctuation.definition.brackets.end.overpass
       pop: 1
-
-  query-filter-key:
-    - match: (=|!=|>|<|<=|>=|~|!~)
-      scope: keyword.operator.logical.overpass
-      pop: 1
-    - match: (?=])
-      pop: 1
-    - include: literals
-
-  query-filter-value:
-    - match: (?=])
-      pop: 1
-    - include: literals
+    - include: expressions
 
 ###[ STYLES ]##################################################################
 
@@ -186,7 +186,20 @@ contexts:
 
 ###[ OPERATORS ]###############################################################
 
-  operators: []
+  operators:
+    - match: (?:~|!~)
+      scope: keyword.operator.logical.overpass
+      push: maybe-regex-string
+    - match: (?:==?|!=|>|<|<=|>=|!)
+      scope: keyword.operator.logical.overpass
+    - match: '::'
+      scope: keyword.operator.overpass
+    - match: \|\||&&
+      scope: keyword.operator.logical.overpass
+    - match: '[+\-*/]'
+      scope: keyword.operator.arithmetic.overpass
+    - match: '[?:]'
+      scope: keyword.operator.ternary.overpass
 
 ###[ LITERALS ]################################################################
 
@@ -225,6 +238,23 @@ contexts:
       scope: punctuation.definition.string.end.overpass
       pop: 1
 
+  maybe-regex-string:
+    - match: '"'
+      scope: meta.string.overpass string.quoted.double.overpass punctuation.definition.string.begin.overpass
+      embed: scope:source.regexp
+      escape: (?<!\\)(")
+      embed_scope: meta.string.overpass string.quoted.double.overpass source.regexp.embedded.overpass
+      escape_captures:
+        1: meta.string.overpass string.quoted.double.overpass punctuation.definition.string.end.overpass
+    - match: \'
+      scope: meta.string.overpass string.quoted.double.overpass punctuation.definition.string.begin.overpass
+      embed: scope:source.regexp
+      escape: (?<!\\)(')
+      embed_scope: meta.string.overpass string.quoted.double.overpass source.regexp.embedded.overpass
+      escape_captures:
+        1: meta.string.overpass string.quoted.double.overpass punctuation.definition.string.end.overpass
+    - include: else-pop
+
   numbers: []
   dates: []
 
@@ -260,4 +290,8 @@ contexts:
   pop-terminator:
     - match: ;
       scope: punctuation.terminator.overpass
+      pop: 1
+
+  else-pop:
+    - match: (?=\S)
       pop: 1
