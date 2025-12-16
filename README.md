@@ -10,6 +10,10 @@ in [Sublime Text][st].
 
 ## Status
 
+### Build system
+
+- Send query to Overpass in browser
+
 ### Language syntax
 
 - Support for basic query statements
@@ -22,11 +26,10 @@ in [Sublime Text][st].
 - Naive support for styles (delegates to CSS)
 
 
-## TODO
+## To-do
 
 ### Build system
 
-- Send query to Overpass in browser
 - Send query to Overpass API
 
 ### Language syntax

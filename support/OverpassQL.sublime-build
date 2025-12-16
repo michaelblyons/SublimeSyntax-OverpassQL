@@ -1,0 +1,5 @@
+{
+    "name": "Open in Overpass Turbo",
+    "selector": "source.overpass",
+    "target": "open_overpass_turbo",
+}
