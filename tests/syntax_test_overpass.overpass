@@ -386,6 +386,53 @@
 /*                                     ^ punctuation.definition.brackets.end.overpass */
 /*                                      ^ punctuation.terminator.overpass */
 
+    .a is_in;
+/*  ^^ variable.other.readwrite.overpass */
+/*  ^ punctuation.definition.variable.begin.overpass */
+/*     ^^^^^ meta.function-call.identifier.overpass support.function.overpass */
+/*          ^ punctuation.terminator.statement.overpass */
+  .a is_in->.b;
+/*^^ variable.other.readwrite.overpass */
+/*^ punctuation.definition.variable.begin.overpass */
+/*   ^^^^^ meta.function-call.identifier.overpass support.function.overpass */
+/*        ^ keyword.operator.arithmetic.overpass */
+/*         ^ keyword.operator.pipe.overpass */
+/*          ^^ variable.other.readwrite.overpass */
+/*          ^ punctuation.definition.variable.begin.overpass */
+/*            ^ punctuation.terminator.statement.overpass */
+  is_in(50.7,7.2)->.b;
+/*^^^^^ meta.function-call.identifier.overpass support.function.overpass */
+/*     ^^^^^^^^^^ meta.function-call.arguments.overpass */
+/*     ^ punctuation.section.arguments.begin.overpass */
+/*      ^^^^ meta.number.float.decimal.overpass constant.numeric.value.overpass */
+/*        ^ punctuation.separator.decimal.overpass */
+/*          ^ punctuation.separator.overpass */
+/*           ^^^ meta.number.float.decimal.overpass constant.numeric.value.overpass */
+/*            ^ punctuation.separator.decimal.overpass */
+/*              ^ punctuation.section.arguments.end.overpass */
+/*               ^ keyword.operator.arithmetic.overpass */
+/*                ^ keyword.operator.pipe.overpass */
+/*                 ^^ variable.other.readwrite.overpass */
+/*                 ^ punctuation.definition.variable.begin.overpass */
+/*                   ^ punctuation.terminator.statement.overpass */
+
+  nwr[cuisine]({{bbox}})
+/*^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
+/*^^^ entity.name.tag.overpass */
+/*   ^^^^^^^^^ meta.brackets.filter.overpass */
+/*   ^ punctuation.definition.brackets.begin.overpass */
+/*           ^ punctuation.definition.brackets.end.overpass */
+/*            ^^^^^^^^^^ meta.parens.filter.overpass */
+/*            ^ punctuation.definition.parens.begin.overpass */
+/*             ^^^^^^^^ variable.language.overpass */
+/*             ^^ punctuation.definition.variable.begin.overpass */
+/*                   ^^ punctuation.definition.variable.end.overpass */
+/*                     ^ punctuation.definition.parens.end.overpass */
+      // find places where "pizza" is in the semicolon-separated list of cuisine values
+      (if: lrs_in("pizza", t["cuisine"]) );
+  out geom;
+
+
   // Example 1
 
   area[name="Köln"]->.b;

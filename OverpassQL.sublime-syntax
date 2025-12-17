@@ -37,6 +37,18 @@ contexts:
   expressions:
     - include: literals
     - include: operators
+    - match: (\{\{)bbox(\}\})
+      scope: variable.language.overpass
+      captures:
+        1: punctuation.definition.variable.begin.overpass
+        2: punctuation.definition.variable.end.overpass
+    - match: ({{functions_builtin}})(\()
+      captures:
+        1: meta.function-call.identifier.overpass support.function.overpass
+        2: meta.function-call.arguments.overpass punctuation.section.arguments.begin.overpass
+      push: inside-function-call-arguments
+    - match: '{{functions_builtin}}'
+      scope: meta.function-call.identifier.overpass support.function.overpass
 
 ###[ SETS ]####################################################################
 
@@ -176,6 +188,10 @@ contexts:
       scope: punctuation.definition.brackets.begin.overpass
       push: query-filter-body
 
+    - match: \(
+      scope: punctuation.definition.parens.begin.overpass
+      push: bbox-body
+
   query-filter-body:
     - meta_scope: meta.brackets.filter.overpass
     - match: \]
@@ -193,12 +209,25 @@ contexts:
       push: maybe-member
     - include: expressions
 
+  bbox-body:
+    - meta_scope: meta.parens.filter.overpass
+    - match: \)
+      scope: punctuation.definition.parens.end.overpass
+      pop: 1
+    - include: comma-separators
+    - include: expressions
+
   maybe-member:
     - match: \.(?=\w)
       scope: punctuation.accessor.dot.overpass
+    - match: ({{functions_builtin}})(\()
+      captures:
+        1: meta.function-call.identifier.overpass support.function.overpass
+        2: meta.function-call.arguments.overpass punctuation.section.arguments.begin.overpass
+      push: inside-function-call-arguments
     - match: (\w+)(\()
       captures:
-        1: meta.function-call.overpass variable.function.overpass
+        1: meta.function-call.identifier.overpass variable.function.overpass
         2: meta.function-call.arguments.overpass punctuation.section.arguments.begin.overpass
       push: inside-function-call-arguments
     - match: \b_\b
@@ -212,6 +241,7 @@ contexts:
     - match: \)
       scope: meta.function-call.arguments.overpass punctuation.section.arguments.end.overpass
       pop: 1
+    - include: comma-separators
     - include: expressions
 
 ###[ STYLES ]##################################################################
@@ -349,6 +379,10 @@ contexts:
 
 ###[ UTILITY ]#################################################################
 
+  comma-separators:
+    - match: ','
+      scope: punctuation.separator.overpass
+
   pop-terminator:
     - match: ;
       scope: punctuation.terminator.overpass
@@ -367,5 +401,20 @@ variables:
   minute: (?:[0-5]\d)
 
   tags_full: (?:\b(?:node|way|area|rel|relation|derived)\b)
-  tags_abbrev: (?:\b(?:[nwr]|nw|nwr|wr|bn|br|bw)\b)
+  tags_abbrev: (?:\b(?:[tnwr]|nw|nwr|wr|bn|br|bw)\b)
   tags: (?:{{tags_full}}|{{tags_abbrev}})
+
+  functions_bare: \b(?:around)\b
+  functions_builtin: |-
+    \b(?x:
+      abs | angle | center | changeset | count
+    | count_ (?: tags | members | distinct_members | by_role | distinct_by_role )
+    | date | gcat | geom | hull | id | isect
+    | is_ (?: closed | date | in | number | tag )
+    | keys | lat | length | lon
+    | lrs_ (?: in | max | min | isect | union )
+    | lstr | map_to_area | max | min | mtype | number
+    | per_member | per_vertex | poly | pos
+    | ref | role | set | suffix | sum | timestamp | trace | type
+    | u | uid | user | version
+    )\b
