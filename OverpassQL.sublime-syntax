@@ -40,6 +40,7 @@ contexts:
         1: punctuation.definition.variable.begin.overpass
         2: punctuation.definition.variable.end.overpass
     - include: builtin-function-calls
+    - include: nested-queries
 
 ###[ SETS ]####################################################################
 
@@ -59,6 +60,7 @@ contexts:
     - match: '->'
       scope: keyword.operator.assignment.overpass
       push: assignment
+    - include: else-pop
 
   assignment:
     - match: (?=;)
@@ -114,7 +116,21 @@ contexts:
       set: maybe-assignment
     - include: statements
 
-  if-statements: []
+  if-statements:
+    - match: (\()(if)(:)
+      captures:
+        1: punctuation.section.block.begin.overpass
+        2: keyword.control.conditional.if.overpass
+        3: punctuation.separator.overpass
+      push: if-statement-body
+
+  if-statement-body:
+    - meta_scope: meta.block.if.overpass
+    - match: \)
+      scope: punctuation.section.block.end.overpass
+      pop: 1
+    - include: expressions
+
   foreach-statements: []
   for-statements: []
   complete-statements: []
@@ -198,6 +214,17 @@ contexts:
       scope: entity.name.tag.overpass
       push: [query-statement, maybe-assignment, query-filters]
 
+  nested-queries:
+    - match: ({{tags}})(\()
+      captures:
+        1: meta.function-call.identifier.overpass support.function.overpass
+        2: meta.function-call.arguments.overpass punctuation.section.arguments.begin.overpass
+      push: [maybe-assignment, query-filters, recursion-body]
+
+    - match: '{{tags}}'
+      scope: entity.name.tag.overpass
+      push: [maybe-assignment, query-filters]
+
   query-statement:
     - meta_scope: meta.statement.overpass
     - include: pop-terminator
@@ -205,14 +232,14 @@ contexts:
   query-filters:
     - match: (?=->|;)
       pop: 1
-
-    - match: \[
-      scope: punctuation.definition.brackets.begin.overpass
-      push: query-filter-body
-
+    - include: if-statements
     - match: \(
       scope: punctuation.definition.parens.begin.overpass
       push: bbox-body
+    - match: \[
+      scope: punctuation.definition.brackets.begin.overpass
+      push: query-filter-body
+    - include: else-pop
 
   query-filter-body:
     - meta_scope: meta.brackets.filter.overpass

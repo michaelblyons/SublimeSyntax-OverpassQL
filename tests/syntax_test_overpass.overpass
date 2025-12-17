@@ -427,7 +427,7 @@
 /*                   ^^ punctuation.definition.variable.end.overpass */
 /*                     ^ punctuation.definition.parens.end.overpass */
       // find places where "pizza" is in the semicolon-separated list of cuisine values
-  //     (if: lrs_in("pizza", t["cuisine"]) );
+      (if: lrs_in("pizza", t["cuisine"]) );
   out geom;
 
 
@@ -735,7 +735,40 @@
 
   // Example 11
 
-  // way["aeroway"="runway"]["surface"="paved"](if: length() > 3000);
+  way["aeroway"="runway"]["surface"="paved"](if: length() > 3000);
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
+/*^^^ entity.name.tag.overpass */
+/*   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
+/*   ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^ string.quoted.double.overpass */
+/*    ^ punctuation.definition.string.begin.overpass */
+/*            ^ punctuation.definition.string.end.overpass */
+/*             ^ keyword.operator.logical.overpass */
+/*              ^^^^^^^^ string.quoted.double.overpass */
+/*              ^ punctuation.definition.string.begin.overpass */
+/*                     ^ punctuation.definition.string.end.overpass */
+/*                      ^ punctuation.definition.brackets.end.overpass */
+/*                       ^ punctuation.definition.brackets.begin.overpass */
+/*                        ^^^^^^^^^ string.quoted.double.overpass */
+/*                        ^ punctuation.definition.string.begin.overpass */
+/*                                ^ punctuation.definition.string.end.overpass */
+/*                                 ^ keyword.operator.logical.overpass */
+/*                                  ^^^^^^^ string.quoted.double.overpass */
+/*                                  ^ punctuation.definition.string.begin.overpass */
+/*                                        ^ punctuation.definition.string.end.overpass */
+/*                                         ^ punctuation.definition.brackets.end.overpass */
+/*                                          ^^^^^^^^^^^^^^^^^^^^^ meta.block.if.overpass */
+/*                                          ^ punctuation.section.block.begin.overpass */
+/*                                           ^^ keyword.control.conditional.if.overpass */
+/*                                             ^ punctuation.separator.overpass */
+/*                                               ^^^^^^ meta.function-call.identifier.overpass support.function.overpass */
+/*                                                     ^^ meta.function-call.arguments.overpass */
+/*                                                     ^ punctuation.section.arguments.begin.overpass */
+/*                                                      ^ punctuation.section.arguments.end.overpass */
+/*                                                        ^ keyword.operator.logical.overpass */
+/*                                                          ^^^^ meta.number.integer.decimal.overpass constant.numeric.value.overpass */
+/*                                                              ^ punctuation.section.block.end.overpass */
+/*                                                               ^ punctuation.terminator.overpass */
   /*added by auto repair*/
   (._;>;);
   /*end of auto repair*/

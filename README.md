@@ -21,6 +21,8 @@ in [Sublime Text][st].
 - Support for literals
     * Naive support for regular expression string after `~` and `!~`
 - Support for operators
+- Support for functions
+- Support for flow control
 - Modest support for sets
 - Minimal support for settings
 - Naive support for styles (delegates to CSS)
@@ -34,8 +36,6 @@ in [Sublime Text][st].
 
 ### Language syntax
 
-- Support functions
-- Support flow control
 - Support intersection
 - Better scopes for `out` clauses
 
