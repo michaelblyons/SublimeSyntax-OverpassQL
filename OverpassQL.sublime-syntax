@@ -29,9 +29,6 @@ contexts:
     - include: settings
     - include: block-statements
     - include: standalone-statements
-    - match: \bmap_to_area\b
-      scope: meta.function-call.overpass support.function.overpass
-      push: maybe-assignment
     - include: expressions
 
   expressions:
@@ -42,13 +39,7 @@ contexts:
       captures:
         1: punctuation.definition.variable.begin.overpass
         2: punctuation.definition.variable.end.overpass
-    - match: ({{functions_builtin}})(\()
-      captures:
-        1: meta.function-call.identifier.overpass support.function.overpass
-        2: meta.function-call.arguments.overpass punctuation.section.arguments.begin.overpass
-      push: inside-function-call-arguments
-    - match: '{{functions_builtin}}'
-      scope: meta.function-call.identifier.overpass support.function.overpass
+    - include: builtin-function-calls
 
 ###[ SETS ]####################################################################
 
@@ -157,6 +148,37 @@ contexts:
     - match: (?:>>|<<|<|>)
       scope: keyword.operator.pipe.overpass
 
+  builtin-function-calls:
+    - include: builtin-function-calls-with-arguments
+    - include: builtin-function-calls-bare
+
+  builtin-function-calls-bare:
+    - match: '{{functions_builtin}}'
+      scope: meta.function-call.identifier.overpass support.function.overpass
+      push: maybe-assignment
+
+  builtin-function-calls-with-arguments:
+    - match: ({{functions_builtin}})(\()
+      captures:
+        1: meta.function-call.identifier.overpass support.function.overpass
+        2: meta.function-call.arguments.overpass punctuation.section.arguments.begin.overpass
+      push: [maybe-assignment, inside-function-call-arguments]
+
+  any-function-calls-with-arguments:
+    - match: (\w+)(\()
+      captures:
+        1: meta.function-call.identifier.overpass variable.function.overpass
+        2: meta.function-call.arguments.overpass punctuation.section.arguments.begin.overpass
+      push: [maybe-assignment, inside-function-call-arguments]
+
+  inside-function-call-arguments:
+    - meta_content_scope: meta.function-call.arguments.overpass
+    - match: \)
+      scope: meta.function-call.arguments.overpass punctuation.section.arguments.end.overpass
+      pop: 1
+    - include: comma-separators
+    - include: expressions
+
   is_in: []
   timeline: []
   local: []
@@ -220,29 +242,13 @@ contexts:
   maybe-member:
     - match: \.(?=\w)
       scope: punctuation.accessor.dot.overpass
-    - match: ({{functions_builtin}})(\()
-      captures:
-        1: meta.function-call.identifier.overpass support.function.overpass
-        2: meta.function-call.arguments.overpass punctuation.section.arguments.begin.overpass
-      push: inside-function-call-arguments
-    - match: (\w+)(\()
-      captures:
-        1: meta.function-call.identifier.overpass variable.function.overpass
-        2: meta.function-call.arguments.overpass punctuation.section.arguments.begin.overpass
-      push: inside-function-call-arguments
+    - include: builtin-function-calls-with-arguments
+    - include: any-function-calls-with-arguments
     - match: \b_\b
       scope: variable.language.overpass
     - match: \w+
       scope: variable.other.member.powershell
     - include: else-pop
-
-  inside-function-call-arguments:
-    - meta_content_scope: meta.function-call.arguments.overpass
-    - match: \)
-      scope: meta.function-call.arguments.overpass punctuation.section.arguments.end.overpass
-      pop: 1
-    - include: comma-separators
-    - include: expressions
 
 ###[ STYLES ]##################################################################
 

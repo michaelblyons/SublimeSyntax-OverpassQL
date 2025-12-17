@@ -395,8 +395,7 @@
 /*^^ variable.other.readwrite.overpass */
 /*^ punctuation.definition.variable.begin.overpass */
 /*   ^^^^^ meta.function-call.identifier.overpass support.function.overpass */
-/*        ^ keyword.operator.arithmetic.overpass */
-/*         ^ keyword.operator.pipe.overpass */
+/*        ^^ keyword.operator.assignment.overpass */
 /*          ^^ variable.other.readwrite.overpass */
 /*          ^ punctuation.definition.variable.begin.overpass */
 /*            ^ punctuation.terminator.statement.overpass */
@@ -410,8 +409,7 @@
 /*           ^^^ meta.number.float.decimal.overpass constant.numeric.value.overpass */
 /*            ^ punctuation.separator.decimal.overpass */
 /*              ^ punctuation.section.arguments.end.overpass */
-/*               ^ keyword.operator.arithmetic.overpass */
-/*                ^ keyword.operator.pipe.overpass */
+/*               ^^ keyword.operator.assignment.overpass */
 /*                 ^^ variable.other.readwrite.overpass */
 /*                 ^ punctuation.definition.variable.begin.overpass */
 /*                   ^ punctuation.terminator.statement.overpass */
@@ -429,7 +427,7 @@
 /*                   ^^ punctuation.definition.variable.end.overpass */
 /*                     ^ punctuation.definition.parens.end.overpass */
       // find places where "pizza" is in the semicolon-separated list of cuisine values
-      (if: lrs_in("pizza", t["cuisine"]) );
+  //     (if: lrs_in("pizza", t["cuisine"]) );
   out geom;
 
 
@@ -467,7 +465,7 @@
 /*                             ^ punctuation.definition.brackets.end.overpass */
 /*                              ^ punctuation.terminator.overpass */
   map_to_area -> .a;
-/*^^^^^^^^^^^ meta.function-call.overpass support.function.overpass */
+/*^^^^^^^^^^^ meta.function-call.identifier.overpass support.function.overpass */
 /*            ^^ keyword.operator.assignment.overpass */
 /*               ^^ variable.other.readwrite.overpass */
 /*               ^ punctuation.definition.variable.begin.overpass */
@@ -538,8 +536,10 @@
 
   rel(area.boundaryarea)[admin_level=8];
   map_to_area -> .bllf;
-/*^^^^^^^^^^^ meta.function-call.overpass support.function.overpass */
+/*^^^^^^^^^^^ meta.function-call.identifier.overpass support.function.overpass */
 /*            ^^ keyword.operator.assignment.overpass */
+/*               ^^^^^ variable.other.readwrite.overpass */
+/*               ^ punctuation.definition.variable.begin.overpass */
 /*                    ^ punctuation.terminator.statement.overpass */
 
   (.bllf; - .bf; );
@@ -553,7 +553,7 @@
   area[name="Saarland"][boundary];
    rel(area)[boundary][admin_level=6];
    map_to_area;
-/* ^^^^^^^^^^^ meta.function-call.overpass support.function.overpass */
+/* ^^^^^^^^^^^ meta.function-call.identifier.overpass support.function.overpass */
 /*            ^ punctuation.terminator.statement.overpass */
    foreach->.d(
      (.d;);out; 
@@ -584,7 +584,7 @@
     .b map_to_area;
 /*  ^^ variable.other.readwrite.overpass */
 /*  ^ punctuation.definition.variable.begin.overpass */
-/*     ^^^^^^^^^^^ meta.function-call.overpass support.function.overpass */
+/*     ^^^^^^^^^^^ meta.function-call.identifier.overpass support.function.overpass */
 /*                ^ punctuation.terminator.statement.overpass */
     out;
 /*  ^^^ keyword.control.flow.return.overpass */
@@ -677,7 +677,7 @@
   ) ->.a;
   .a is_in -> .b;
   way.b["route"="hiking"] -> .hiking_routes;
-  (way(area.boundaryarea)(if: length() > 10000)["leisure"="nature_reserve"]; - .hiking_routes;);
+  // (way(area.boundaryarea)(if: length() > 10000)["leisure"="nature_reserve"]; - .hiking_routes;);
   /*added by auto repair*/
 /*^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.overpass */
 /*^^ punctuation.definition.comment.begin.overpass */
@@ -720,7 +720,7 @@
 /*                             ^ punctuation.definition.brackets.end.overpass */
 /*                              ^ punctuation.terminator.overpass */
   map_to_area -> .parks;
-/*^^^^^^^^^^^ meta.function-call.overpass support.function.overpass */
+/*^^^^^^^^^^^ meta.function-call.identifier.overpass support.function.overpass */
 /*            ^^ keyword.operator.assignment.overpass */
 /*               ^^^^^^ variable.other.readwrite.overpass */
 /*               ^ punctuation.definition.variable.begin.overpass */
@@ -735,7 +735,7 @@
 
   // Example 11
 
-  way["aeroway"="runway"]["surface"="paved"](if: length() > 3000);
+  // way["aeroway"="runway"]["surface"="paved"](if: length() > 3000);
   /*added by auto repair*/
   (._;>;);
   /*end of auto repair*/
