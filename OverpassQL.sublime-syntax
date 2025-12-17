@@ -40,7 +40,7 @@ contexts:
         1: punctuation.definition.variable.begin.overpass
         2: punctuation.definition.variable.end.overpass
     - include: builtin-function-calls
-    - include: nested-queries
+    - include: query-statements
 
 ###[ SETS ]####################################################################
 
@@ -214,20 +214,10 @@ contexts:
       scope: entity.name.tag.overpass
       push: [query-statement, maybe-assignment, query-filters]
 
-  nested-queries:
-    - match: ({{tags}})(\()
-      captures:
-        1: meta.function-call.identifier.overpass support.function.overpass
-        2: meta.function-call.arguments.overpass punctuation.section.arguments.begin.overpass
-      push: [maybe-assignment, query-filters, recursion-body]
-
-    - match: '{{tags}}'
-      scope: entity.name.tag.overpass
-      push: [maybe-assignment, query-filters]
-
   query-statement:
     - meta_scope: meta.statement.overpass
     - include: pop-terminator
+    - include: else-pop
 
   query-filters:
     - match: (?=->|;)
