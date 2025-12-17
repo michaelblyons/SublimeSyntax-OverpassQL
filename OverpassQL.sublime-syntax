@@ -154,7 +154,13 @@ contexts:
 ###[ QUERY STATEMENTS ]########################################################
 
   query-statements:
-    - match: (?:node|way|area|rel|relation|derived|nwr)
+    - match: ({{tags}})(\()
+      captures:
+        1: meta.function-call.identifier.overpass support.function.overpass
+        2: meta.function-call.arguments.overpass punctuation.section.arguments.begin.overpass
+      push: [query-statement, maybe-assignment, query-filters, recursion-body]
+
+    - match: '{{tags}}'
       scope: entity.name.tag.overpass
       push: [query-statement, maybe-assignment, query-filters]
 
@@ -171,9 +177,40 @@ contexts:
       push: query-filter-body
 
   query-filter-body:
-    - meta_scope: meta.brackets.setting.overpass
+    - meta_scope: meta.brackets.filter.overpass
     - match: \]
       scope: punctuation.definition.brackets.end.overpass
+      pop: 1
+    - include: expressions
+
+  recursion-body:
+    - meta_content_scope: meta.function-call.arguments.overpass
+    - match: \)
+      scope: meta.function-call.arguments.overpass punctuation.section.parens.end.overpass
+      pop: 1
+    - match: '{{tags}}'
+      scope: entity.name.tag.overpass
+      push: maybe-member
+    - include: expressions
+
+  maybe-member:
+    - match: \.(?=\w)
+      scope: punctuation.accessor.dot.overpass
+    - match: (\w+)(\()
+      captures:
+        1: meta.function-call.overpass variable.function.overpass
+        2: meta.function-call.arguments.overpass punctuation.section.arguments.begin.overpass
+      push: inside-function-call-arguments
+    - match: \b_\b
+      scope: variable.language.overpass
+    - match: \w+
+      scope: variable.other.member.powershell
+    - include: else-pop
+
+  inside-function-call-arguments:
+    - meta_content_scope: meta.function-call.arguments.overpass
+    - match: \)
+      scope: meta.function-call.arguments.overpass punctuation.section.arguments.end.overpass
       pop: 1
     - include: expressions
 
@@ -328,3 +365,7 @@ variables:
   day: (?:0[1-9]|[12][0-9]|3[01])
   hour: (?:[01]\d|2[0-3])
   minute: (?:[0-5]\d)
+
+  tags_full: (?:\b(?:node|way|area|rel|relation|derived)\b)
+  tags_abbrev: (?:\b(?:[nwr]|nw|nwr|wr|bn|br|bw)\b)
+  tags: (?:{{tags_full}}|{{tags_abbrev}})
