@@ -116,21 +116,7 @@ contexts:
       set: maybe-assignment
     - include: statements
 
-  if-statements:
-    - match: (\()(if)(:)
-      captures:
-        1: punctuation.section.block.begin.overpass
-        2: keyword.control.conditional.if.overpass
-        3: punctuation.separator.overpass
-      push: if-statement-body
-
-  if-statement-body:
-    - meta_scope: meta.block.if.overpass
-    - match: \)
-      scope: punctuation.section.block.end.overpass
-      pop: 1
-    - include: expressions
-
+  if-statements: []
   foreach-statements: []
   for-statements: []
   complete-statements: []
@@ -204,15 +190,9 @@ contexts:
 ###[ QUERY STATEMENTS ]########################################################
 
   query-statements:
-    - match: ({{tags}})(\()
-      captures:
-        1: meta.function-call.identifier.overpass support.function.overpass
-        2: meta.function-call.arguments.overpass punctuation.section.arguments.begin.overpass
-      push: [query-statement, maybe-assignment, query-filters, recursion-body]
-
     - match: '{{tags}}'
       scope: entity.name.tag.overpass
-      push: [query-statement, maybe-assignment, query-filters]
+      push: [query-statement, maybe-assignment, maybe-member, query-filters]
 
   query-statement:
     - meta_scope: meta.statement.overpass
@@ -222,49 +202,64 @@ contexts:
   query-filters:
     - match: (?=->|;)
       pop: 1
-    - include: if-statements
+    - match: (\()(if)(:)
+      captures:
+        1: punctuation.section.block.begin.overpass
+        2: keyword.control.conditional.if.overpass
+        3: punctuation.separator.overpass
+      push: operator-filter-body
+    - match: (\()({{tags}}|way_cnt|way_link|id|around|poly|newer|changed|user|uid|area|pivot)(:|(?=\.))
+      captures:
+        1: punctuation.section.block.begin.overpass
+        2: keyword.operator.logical.overpass
+        3: punctuation.separator.overpass
+      push: operator-filter-body
     - match: \(
-      scope: punctuation.definition.parens.begin.overpass
+      scope: punctuation.section.block.begin.overpass
       push: bbox-body
     - match: \[
-      scope: punctuation.definition.brackets.begin.overpass
+      scope: punctuation.section.block.begin.overpass
       push: query-filter-body
     - include: else-pop
 
-  query-filter-body:
-    - meta_scope: meta.brackets.filter.overpass
-    - match: \]
-      scope: punctuation.definition.brackets.end.overpass
+  operator-filter-body:
+    - meta_scope: meta.block.filter.operator.overpass
+    - match: \)
+      scope: punctuation.section.block.end.overpass
       pop: 1
+    - include: sets
     - include: expressions
 
-  recursion-body:
-    - meta_content_scope: meta.function-call.arguments.overpass
-    - match: \)
-      scope: meta.function-call.arguments.overpass punctuation.section.parens.end.overpass
+  query-filter-body:
+    - meta_scope: meta.block.filter.query.overpass
+    - match: \]
+      scope: punctuation.section.block.end.overpass
       pop: 1
-    - match: '{{tags}}'
-      scope: entity.name.tag.overpass
-      push: maybe-member
     - include: expressions
 
   bbox-body:
-    - meta_scope: meta.parens.filter.overpass
+    - meta_scope: meta.block.filter.bbox.overpass
     - match: \)
-      scope: punctuation.definition.parens.end.overpass
+      scope: punctuation.section.block.end.overpass
       pop: 1
     - include: comma-separators
     - include: expressions
 
   maybe-member:
-    - match: \.(?=\w)
+    - match: \.(?=\w+\()
       scope: punctuation.accessor.dot.overpass
+    - match: \.(?=\w)
+      scope: keyword.operator.logical.intersection.overpass
     - include: builtin-function-calls-with-arguments
-    - include: any-function-calls-with-arguments
+    # - include: any-function-calls-with-arguments
     - match: \b_\b
       scope: variable.language.overpass
     - match: \w+
-      scope: variable.other.member.powershell
+      scope: variable.other.readwrite.powershell
+    - match: (?=[\[(])
+      push:
+        - include: query-filters
+        - include: else-pop
     - include: else-pop
 
 ###[ STYLES ]##################################################################

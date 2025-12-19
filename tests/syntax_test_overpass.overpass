@@ -14,38 +14,38 @@
   node[name=Foo];
 /*^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*         ^ keyword.operator.logical.overpass */
-/*             ^ punctuation.definition.brackets.end.overpass */
+/*             ^ punctuation.section.block.end.overpass */
 /*              ^ punctuation.terminator.overpass */
   node[name='Foo'];
 /*^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*         ^ keyword.operator.logical.overpass */
 /*          ^^^^^ string.quoted.single.overpass */
 /*          ^ punctuation.definition.string.begin.overpass */
 /*              ^ punctuation.definition.string.end.overpass */
-/*               ^ punctuation.definition.brackets.end.overpass */
+/*               ^ punctuation.section.block.end.overpass */
 /*                ^ punctuation.terminator.overpass */
   node[name="Foo"];
 /*^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*         ^ keyword.operator.logical.overpass */
 /*          ^^^^^ string.quoted.double.overpass */
 /*          ^ punctuation.definition.string.begin.overpass */
 /*              ^ punctuation.definition.string.end.overpass */
-/*               ^ punctuation.definition.brackets.end.overpass */
+/*               ^ punctuation.section.block.end.overpass */
 /*                ^ punctuation.terminator.overpass */
   node['name'="Foo"];
 /*^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.single.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
@@ -53,13 +53,13 @@
 /*            ^^^^^ string.quoted.double.overpass */
 /*            ^ punctuation.definition.string.begin.overpass */
 /*                ^ punctuation.definition.string.end.overpass */
-/*                 ^ punctuation.definition.brackets.end.overpass */
+/*                 ^ punctuation.section.block.end.overpass */
 /*                  ^ punctuation.terminator.overpass */
   node["name"="Foo"];
 /*^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.double.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
@@ -67,13 +67,13 @@
 /*            ^^^^^ string.quoted.double.overpass */
 /*            ^ punctuation.definition.string.begin.overpass */
 /*                ^ punctuation.definition.string.end.overpass */
-/*                 ^ punctuation.definition.brackets.end.overpass */
+/*                 ^ punctuation.section.block.end.overpass */
 /*                  ^ punctuation.terminator.overpass */
   node["name"='Foo'];
 /*^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.double.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
@@ -81,25 +81,25 @@
 /*            ^^^^^ string.quoted.single.overpass */
 /*            ^ punctuation.definition.string.begin.overpass */
 /*                ^ punctuation.definition.string.end.overpass */
-/*                 ^ punctuation.definition.brackets.end.overpass */
+/*                 ^ punctuation.section.block.end.overpass */
 /*                  ^ punctuation.terminator.overpass */
 
   node[name="Foo Street"];
 /*^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*         ^ keyword.operator.logical.overpass */
 /*          ^^^^^^^^^^^^ string.quoted.double.overpass */
 /*          ^ punctuation.definition.string.begin.overpass */
 /*                     ^ punctuation.definition.string.end.overpass */
-/*                      ^ punctuation.definition.brackets.end.overpass */
+/*                      ^ punctuation.section.block.end.overpass */
 /*                       ^ punctuation.terminator.overpass */
   node["name:fr"="Rue Feau"];
 /*^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^^^^ string.quoted.double.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*             ^ punctuation.definition.string.end.overpass */
@@ -107,33 +107,33 @@
 /*               ^^^^^^^^^^ string.quoted.double.overpass */
 /*               ^ punctuation.definition.string.begin.overpass */
 /*                        ^ punctuation.definition.string.end.overpass */
-/*                         ^ punctuation.definition.brackets.end.overpass */
+/*                         ^ punctuation.section.block.end.overpass */
 /*                          ^ punctuation.terminator.overpass */
 
   node[power=""];          // not supported
 /*^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*          ^ keyword.operator.logical.overpass */
 /*           ^^ string.quoted.double.overpass */
 /*           ^ punctuation.definition.string.begin.overpass */
 /*            ^ punctuation.definition.string.end.overpass */
-/*             ^ punctuation.definition.brackets.end.overpass */
+/*             ^ punctuation.section.block.end.overpass */
 /*              ^ punctuation.terminator.overpass */
 /*                         ^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass */
 /*                         ^^ punctuation.definition.comment.begin.overpass */
   node[power~"^$"];        // use regular expression instead
 /*^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*          ^ keyword.operator.logical.overpass */
 /*           ^^^^ meta.string.overpass string.quoted.double.overpass */
 /*           ^ punctuation.definition.string.begin.overpass */
-/*            ^^ source.regexp.embedded.overpass keyword.control */
+/*            ^^ source.regexp.embedded.overpass keyword.control*/
 /*              ^ punctuation.definition.string.end.overpass */
-/*               ^ punctuation.definition.brackets.end.overpass */
+/*               ^ punctuation.section.block.end.overpass */
 /*                ^ punctuation.terminator.overpass */
 /*                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass */
 /*                         ^^ punctuation.definition.comment.begin.overpass */
@@ -141,8 +141,8 @@
   node[~"^$"~"."];         // find nodes with empty key ("") and any value
 /*^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^ keyword.operator.logical.overpass */
 /*      ^^^^ meta.string.overpass string.quoted.double.overpass */
 /*      ^ punctuation.definition.string.begin.overpass */
@@ -153,7 +153,7 @@
 /*           ^ punctuation.definition.string.begin.overpass */
 /*            ^ source.regexp.embedded.overpass keyword.other.any.regexp */
 /*             ^ punctuation.definition.string.end.overpass */
-/*              ^ punctuation.definition.brackets.end.overpass */
+/*              ^ punctuation.section.block.end.overpass */
 /*               ^ punctuation.terminator.overpass */
 /*                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass */
 /*                         ^^ punctuation.definition.comment.begin.overpass */
@@ -161,67 +161,67 @@
   node["name"];
 /*^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.double.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
-/*           ^ punctuation.definition.brackets.end.overpass */
+/*           ^ punctuation.section.block.end.overpass */
 /*            ^ punctuation.terminator.overpass */
   node['name'];
 /*^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.single.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
-/*           ^ punctuation.definition.brackets.end.overpass */
+/*           ^ punctuation.section.block.end.overpass */
 /*            ^ punctuation.terminator.overpass */
   node[name];
 /*^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
-/*         ^ punctuation.definition.brackets.end.overpass */
+/*    ^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
+/*         ^ punctuation.section.block.end.overpass */
 /*          ^ punctuation.terminator.overpass */
 
   node[!"name"];
 /*^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^ keyword.operator.logical.overpass */
 /*      ^^^^^^ string.quoted.double.overpass */
 /*      ^ punctuation.definition.string.begin.overpass */
 /*           ^ punctuation.definition.string.end.overpass */
-/*            ^ punctuation.definition.brackets.end.overpass */
+/*            ^ punctuation.section.block.end.overpass */
 /*             ^ punctuation.terminator.overpass */
   node[!'name'];
 /*^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^ keyword.operator.logical.overpass */
 /*      ^^^^^^ string.quoted.single.overpass */
 /*      ^ punctuation.definition.string.begin.overpass */
 /*           ^ punctuation.definition.string.end.overpass */
-/*            ^ punctuation.definition.brackets.end.overpass */
+/*            ^ punctuation.section.block.end.overpass */
 /*             ^ punctuation.terminator.overpass */
   node[!name];
 /*^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^ keyword.operator.logical.overpass */
-/*          ^ punctuation.definition.brackets.end.overpass */
+/*          ^ punctuation.section.block.end.overpass */
 /*           ^ punctuation.terminator.overpass */
 
   node["name"~"^Foo$"];   // Finds nodes, where the tag name matches exactly Foo - identical to node["name"="foo"];
 /*^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.double.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
@@ -232,15 +232,15 @@
 /*             ^ keyword.control */
 /*                 ^ keyword.control */
 /*                  ^ punctuation.definition.string.end.overpass */
-/*                   ^ punctuation.definition.brackets.end.overpass */
+/*                   ^ punctuation.section.block.end.overpass */
 /*                    ^ punctuation.terminator.overpass */
 /*                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass */
 /*                        ^^ punctuation.definition.comment.begin.overpass */
   node["name"~"^Foo"];    // Finds nodes, where the tag name starts with Foo
 /*^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.double.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
@@ -250,15 +250,15 @@
 /*             ^^^^ source.regexp.embedded.overpass */
 /*             ^ keyword.control */
 /*                 ^ punctuation.definition.string.end.overpass */
-/*                  ^ punctuation.definition.brackets.end.overpass */
+/*                  ^ punctuation.section.block.end.overpass */
 /*                   ^ punctuation.terminator.overpass */
 /*                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass */
 /*                        ^^ punctuation.definition.comment.begin.overpass */
   node["name"~"Foo$"];    // Finds nodes, where the tag name ends with Foo
 /*^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.double.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
@@ -268,15 +268,15 @@
 /*             ^^^^ source.regexp.embedded.overpass */
 /*                ^ keyword.control */
 /*                 ^ punctuation.definition.string.end.overpass */
-/*                  ^ punctuation.definition.brackets.end.overpass */
+/*                  ^ punctuation.section.block.end.overpass */
 /*                   ^ punctuation.terminator.overpass */
 /*                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass */
 /*                        ^^ punctuation.definition.comment.begin.overpass */
   node["name"~"Foo"];     // Finds nodes, where the tag name contains the substring Foo anywhere in the tag value
 /*^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.double.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
@@ -285,15 +285,15 @@
 /*            ^ punctuation.definition.string.begin.overpass */
 /*             ^^^ source.regexp.embedded.overpass */
 /*                ^ punctuation.definition.string.end.overpass */
-/*                 ^ punctuation.definition.brackets.end.overpass */
+/*                 ^ punctuation.section.block.end.overpass */
 /*                  ^ punctuation.terminator.overpass */
 /*                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass */
 /*                        ^^ punctuation.definition.comment.begin.overpass */
   node["name"~".*"];      // Finds nodes, where the tag name matches anything, equal to node["name"];
 /*^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.double.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
@@ -304,15 +304,15 @@
 /*             ^ keyword.other.any.regexp */
 /*              ^ keyword.operator.quantifier.regexp */
 /*               ^ punctuation.definition.string.end.overpass */
-/*                ^ punctuation.definition.brackets.end.overpass */
+/*                ^ punctuation.section.block.end.overpass */
 /*                 ^ punctuation.terminator.overpass */
 /*                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass */
 /*                        ^^ punctuation.definition.comment.begin.overpass */
   node["name"!~".*"];    // Finds nodes without name tag; does not have key name - identical to node[!"name"];
 /*^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.double.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
@@ -323,7 +323,7 @@
 /*              ^ keyword.other.any.regexp */
 /*               ^ keyword.operator.quantifier.regexp */
 /*                ^ punctuation.definition.string.end.overpass */
-/*                 ^ punctuation.definition.brackets.end.overpass */
+/*                 ^ punctuation.section.block.end.overpass */
 /*                  ^ punctuation.terminator.overpass */
 /*                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.overpass */
 /*                       ^^ punctuation.definition.comment.begin.overpass */
@@ -331,8 +331,8 @@
   node["name"!="Foo"];
 /*^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.double.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
@@ -340,13 +340,13 @@
 /*             ^^^^^ string.quoted.double.overpass */
 /*             ^ punctuation.definition.string.begin.overpass */
 /*                 ^ punctuation.definition.string.end.overpass */
-/*                  ^ punctuation.definition.brackets.end.overpass */
+/*                  ^ punctuation.section.block.end.overpass */
 /*                   ^ punctuation.terminator.overpass */
   node["name"!~"Foo"];
 /*^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.double.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
@@ -355,13 +355,13 @@
 /*             ^ punctuation.definition.string.begin.overpass */
 /*              ^^^ source.regexp.embedded.overpass */
 /*                 ^ punctuation.definition.string.end.overpass */
-/*                  ^ punctuation.definition.brackets.end.overpass */
+/*                  ^ punctuation.section.block.end.overpass */
 /*                   ^ punctuation.terminator.overpass */
   node["name"!~"Foo",i];
 /*^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*     ^^^^^^ string.quoted.double.overpass */
 /*     ^ punctuation.definition.string.begin.overpass */
 /*          ^ punctuation.definition.string.end.overpass */
@@ -370,20 +370,20 @@
 /*             ^ punctuation.definition.string.begin.overpass */
 /*              ^^^ source.regexp.embedded.overpass */
 /*                 ^ punctuation.definition.string.end.overpass */
-/*                    ^ punctuation.definition.brackets.end.overpass */
+/*                    ^ punctuation.section.block.end.overpass */
 /*                     ^ punctuation.terminator.overpass */
   node[lastchecked=2017-09-28T19:51:44Z];
 /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*                ^ keyword.operator.logical.overpass */
 /*                 ^^^^^^^^^^^^^^^^^^^^ meta.number.date.overpass */
 /*                 ^^^^^^^^^^ constant.numeric.date.overpass */
 /*                           ^ punctuation.separator.sequence.overpass */
 /*                            ^^^^^^^^ constant.numeric.time.overpass */
 /*                                    ^ punctuation.separator.sequence.overpass */
-/*                                     ^ punctuation.definition.brackets.end.overpass */
+/*                                     ^ punctuation.section.block.end.overpass */
 /*                                      ^ punctuation.terminator.overpass */
 
     .a is_in;
@@ -417,18 +417,43 @@
   nwr[cuisine]({{bbox}})
 /*^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^ entity.name.tag.overpass */
-/*   ^^^^^^^^^ meta.brackets.filter.overpass */
-/*   ^ punctuation.definition.brackets.begin.overpass */
-/*           ^ punctuation.definition.brackets.end.overpass */
-/*            ^^^^^^^^^^ meta.parens.filter.overpass */
-/*            ^ punctuation.definition.parens.begin.overpass */
+/*   ^^^^^^^^^ meta.block.filter.query.overpass */
+/*   ^ punctuation.section.block.begin.overpass */
+/*           ^ punctuation.section.block.end.overpass */
+/*            ^^^^^^^^^^ meta.block.filter.bbox.overpass */
+/*            ^ punctuation.section.block.begin.overpass */
 /*             ^^^^^^^^ variable.language.overpass */
 /*             ^^ punctuation.definition.variable.begin.overpass */
 /*                   ^^ punctuation.definition.variable.end.overpass */
-/*                     ^ punctuation.definition.parens.end.overpass */
+/*                     ^ punctuation.section.block.end.overpass */
       // find places where "pizza" is in the semicolon-separated list of cuisine values
       (if: lrs_in("pizza", t["cuisine"]) );
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
+/*    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.filter.operator.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
+/*     ^^ keyword.control.conditional.if.overpass */
+/*       ^ punctuation.separator.overpass */
+/*         ^^^^^^ meta.function-call.identifier.overpass support.function.overpass */
+/*               ^^^^^^^^^^^^^^^^^^^^^^^ meta.function-call.arguments.overpass */
+/*               ^ punctuation.section.arguments.begin.overpass */
+/*                ^^^^^^^ string.quoted.double.overpass */
+/*                ^ punctuation.definition.string.begin.overpass */
+/*                      ^ punctuation.definition.string.end.overpass */
+/*                       ^ punctuation.separator.overpass */
+/*                         ^^^^^^^^^^^^ meta.statement.overpass */
+/*                         ^ entity.name.tag.overpass */
+/*                          ^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*                          ^ punctuation.section.block.begin.overpass */
+/*                           ^^^^^^^^^ string.quoted.double.overpass */
+/*                           ^ punctuation.definition.string.begin.overpass */
+/*                                   ^ punctuation.definition.string.end.overpass */
+/*                                    ^ punctuation.section.block.end.overpass */
+/*                                     ^ punctuation.section.arguments.end.overpass */
+/*                                       ^ punctuation.section.block.end.overpass */
+/*                                        ^ punctuation.terminator.overpass */
   out geom;
+
+   node(around:100.0,50.7,7.1);
 
 
   // Example 1
@@ -436,33 +461,33 @@
   area[name="Köln"]->.b;
 /*^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*         ^ keyword.operator.logical.overpass */
 /*          ^^^^^^ string.quoted.double.overpass */
 /*          ^ punctuation.definition.string.begin.overpass */
 /*               ^ punctuation.definition.string.end.overpass */
-/*                ^ punctuation.definition.brackets.end.overpass */
+/*                ^ punctuation.section.block.end.overpass */
 /*                 ^^ keyword.operator.assignment.overpass */
 /*                   ^^ variable.other.readwrite.overpass */
 /*                   ^ punctuation.definition.variable.begin.overpass */
 /*                     ^ punctuation.terminator.overpass */
   rel(area.b)[name="Innenstadt"];
 /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
-/*^^^ meta.function-call.identifier.overpass support.function.overpass */
-/*   ^^^^^^^^ meta.function-call.arguments.overpass */
-/*   ^ punctuation.section.arguments.begin.overpass */
-/*    ^^^^ entity.name.tag.overpass */
-/*        ^ punctuation.accessor.dot.overpass */
-/*         ^ variable.other.member.powershell */
-/*          ^ punctuation.section.parens.end.overpass */
-/*           ^^^^^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*           ^ punctuation.definition.brackets.begin.overpass */
+/*^^^ entity.name.tag.overpass */
+/*   ^^^^^^^^ meta.block.filter.operator.overpass */
+/*   ^ punctuation.section.block.begin.overpass */
+/*    ^^^^ keyword.operator.logical.overpass */
+/*        ^^ variable.other.readwrite.overpass */
+/*        ^ punctuation.definition.variable.begin.overpass */
+/*          ^ punctuation.section.block.end.overpass */
+/*           ^^^^^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*           ^ punctuation.section.block.begin.overpass */
 /*                ^ keyword.operator.logical.overpass */
 /*                 ^^^^^^^^^^^^ string.quoted.double.overpass */
 /*                 ^ punctuation.definition.string.begin.overpass */
 /*                            ^ punctuation.definition.string.end.overpass */
-/*                             ^ punctuation.definition.brackets.end.overpass */
+/*                             ^ punctuation.section.block.end.overpass */
 /*                              ^ punctuation.terminator.overpass */
   map_to_area -> .a;
 /*^^^^^^^^^^^ meta.function-call.identifier.overpass support.function.overpass */
@@ -478,12 +503,12 @@
   area[admin_level=4]["name"="Hessen"][boundary=administrative]->.boundaryarea;
 /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*                ^ keyword.operator.logical.overpass */
 /*                 ^ meta.number.integer.decimal.overpass constant.numeric.value.overpass */
-/*                  ^ punctuation.definition.brackets.end.overpass */
-/*                   ^ punctuation.definition.brackets.begin.overpass */
+/*                  ^ punctuation.section.block.end.overpass */
+/*                   ^ punctuation.section.block.begin.overpass */
 /*                    ^^^^^^ string.quoted.double.overpass */
 /*                    ^ punctuation.definition.string.begin.overpass */
 /*                         ^ punctuation.definition.string.end.overpass */
@@ -491,10 +516,10 @@
 /*                           ^^^^^^^^ string.quoted.double.overpass */
 /*                           ^ punctuation.definition.string.begin.overpass */
 /*                                  ^ punctuation.definition.string.end.overpass */
-/*                                   ^ punctuation.definition.brackets.end.overpass */
-/*                                    ^ punctuation.definition.brackets.begin.overpass */
+/*                                   ^ punctuation.section.block.end.overpass */
+/*                                    ^ punctuation.section.block.begin.overpass */
 /*                                             ^ keyword.operator.logical.overpass */
-/*                                                            ^ punctuation.definition.brackets.end.overpass */
+/*                                                            ^ punctuation.section.block.end.overpass */
 /*                                                             ^^ keyword.operator.assignment.overpass */
 /*                                                               ^^^^^^^^^^^^^ variable.other.readwrite.overpass */
 /*                                                               ^ punctuation.definition.variable.begin.overpass */
@@ -503,15 +528,15 @@
 /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.overpass */
 /*^ punctuation.section.block.begin.overpass */
 /*  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
-/*  ^^^^ meta.function-call.identifier.overpass support.function.overpass */
-/*      ^^^^^^^^^^^^^^^^^^^ meta.function-call.arguments.overpass */
-/*      ^ punctuation.section.arguments.begin.overpass */
-/*       ^^^^ entity.name.tag.overpass */
-/*           ^ punctuation.accessor.dot.overpass */
-/*            ^^^^^^^^^^^^ variable.other.member.powershell */
-/*                        ^ punctuation.section.parens.end.overpass */
-/*                         ^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*                         ^ punctuation.definition.brackets.begin.overpass */
+/*  ^^^^ entity.name.tag.overpass */
+/*      ^^^^^^^^^^^^^^^^^^^ meta.block.filter.operator.overpass */
+/*      ^ punctuation.section.block.begin.overpass */
+/*       ^^^^ keyword.operator.logical.overpass */
+/*           ^^^^^^^^^^^^^ variable.other.readwrite.overpass */
+/*           ^ punctuation.definition.variable.begin.overpass */
+/*                        ^ punctuation.section.block.end.overpass */
+/*                         ^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*                         ^ punctuation.section.block.begin.overpass */
 /*                          ^^^^^^^^^ string.quoted.double.overpass */
 /*                          ^ punctuation.definition.string.begin.overpass */
 /*                                  ^ punctuation.definition.string.end.overpass */
@@ -519,7 +544,7 @@
 /*                                    ^^^^^^^^^^^^^^ string.quoted.double.overpass */
 /*                                    ^ punctuation.definition.string.begin.overpass */
 /*                                                 ^ punctuation.definition.string.end.overpass */
-/*                                                  ^ punctuation.definition.brackets.end.overpass */
+/*                                                  ^ punctuation.section.block.end.overpass */
 /*                                                   ^ punctuation.terminator.overpass */
     way(area.boundaryarea)["amenity"="fire_station"];
     >;
@@ -567,11 +592,11 @@
 
   rel(62716)->.b;
 /*^^^^^^^^^^^^^^^ meta.statement.overpass */
-/*^^^ meta.function-call.identifier.overpass support.function.overpass */
-/*   ^^^^^^^ meta.function-call.arguments.overpass */
-/*   ^ punctuation.section.arguments.begin.overpass */
+/*^^^ entity.name.tag.overpass */
+/*   ^^^^^^^ meta.block.filter.bbox.overpass */
+/*   ^ punctuation.section.block.begin.overpass */
 /*    ^^^^^ meta.number.integer.decimal.overpass constant.numeric.value.overpass */
-/*         ^ punctuation.section.parens.end.overpass */
+/*         ^ punctuation.section.block.end.overpass */
 /*          ^^ keyword.operator.assignment.overpass */
 /*            ^^ variable.other.readwrite.overpass */
 /*            ^ punctuation.definition.variable.begin.overpass */
@@ -694,30 +719,30 @@
   area[name="Berlin"]->.region;
 /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^^ entity.name.tag.overpass */
-/*    ^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*    ^ punctuation.definition.brackets.begin.overpass */
+/*    ^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
 /*         ^ keyword.operator.logical.overpass */
 /*          ^^^^^^^^ string.quoted.double.overpass */
 /*          ^ punctuation.definition.string.begin.overpass */
 /*                 ^ punctuation.definition.string.end.overpass */
-/*                  ^ punctuation.definition.brackets.end.overpass */
+/*                  ^ punctuation.section.block.end.overpass */
 /*                   ^^ keyword.operator.assignment.overpass */
 /*                     ^^^^^^^ variable.other.readwrite.overpass */
 /*                     ^ punctuation.definition.variable.begin.overpass */
 /*                            ^ punctuation.terminator.overpass */
   rel(area.region)[leisure=park];
 /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
-/*^^^ meta.function-call.identifier.overpass support.function.overpass */
-/*   ^^^^^^^^^^^^^ meta.function-call.arguments.overpass */
-/*   ^ punctuation.section.arguments.begin.overpass */
-/*    ^^^^ entity.name.tag.overpass */
-/*        ^ punctuation.accessor.dot.overpass */
-/*         ^^^^^^ variable.other.member.powershell */
-/*               ^ punctuation.section.parens.end.overpass */
-/*                ^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*                ^ punctuation.definition.brackets.begin.overpass */
+/*^^^ entity.name.tag.overpass */
+/*   ^^^^^^^^^^^^^ meta.block.filter.operator.overpass */
+/*   ^ punctuation.section.block.begin.overpass */
+/*    ^^^^ keyword.operator.logical.overpass */
+/*        ^^^^^^^ variable.other.readwrite.overpass */
+/*        ^ punctuation.definition.variable.begin.overpass */
+/*               ^ punctuation.section.block.end.overpass */
+/*                ^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*                ^ punctuation.section.block.begin.overpass */
 /*                        ^ keyword.operator.logical.overpass */
-/*                             ^ punctuation.definition.brackets.end.overpass */
+/*                             ^ punctuation.section.block.end.overpass */
 /*                              ^ punctuation.terminator.overpass */
   map_to_area -> .parks;
 /*^^^^^^^^^^^ meta.function-call.identifier.overpass support.function.overpass */
@@ -738,8 +763,8 @@
   way["aeroway"="runway"]["surface"="paved"](if: length() > 3000);
 /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
 /*^^^ entity.name.tag.overpass */
-/*   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.brackets.filter.overpass */
-/*   ^ punctuation.definition.brackets.begin.overpass */
+/*   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*   ^ punctuation.section.block.begin.overpass */
 /*    ^^^^^^^^^ string.quoted.double.overpass */
 /*    ^ punctuation.definition.string.begin.overpass */
 /*            ^ punctuation.definition.string.end.overpass */
@@ -747,8 +772,8 @@
 /*              ^^^^^^^^ string.quoted.double.overpass */
 /*              ^ punctuation.definition.string.begin.overpass */
 /*                     ^ punctuation.definition.string.end.overpass */
-/*                      ^ punctuation.definition.brackets.end.overpass */
-/*                       ^ punctuation.definition.brackets.begin.overpass */
+/*                      ^ punctuation.section.block.end.overpass */
+/*                       ^ punctuation.section.block.begin.overpass */
 /*                        ^^^^^^^^^ string.quoted.double.overpass */
 /*                        ^ punctuation.definition.string.begin.overpass */
 /*                                ^ punctuation.definition.string.end.overpass */
@@ -756,8 +781,8 @@
 /*                                  ^^^^^^^ string.quoted.double.overpass */
 /*                                  ^ punctuation.definition.string.begin.overpass */
 /*                                        ^ punctuation.definition.string.end.overpass */
-/*                                         ^ punctuation.definition.brackets.end.overpass */
-/*                                          ^^^^^^^^^^^^^^^^^^^^^ meta.block.if.overpass */
+/*                                         ^ punctuation.section.block.end.overpass */
+/*                                          ^^^^^^^^^^^^^^^^^^^^^ meta.block.filter.operator.overpass */
 /*                                          ^ punctuation.section.block.begin.overpass */
 /*                                           ^^ keyword.control.conditional.if.overpass */
 /*                                             ^ punctuation.separator.overpass */
