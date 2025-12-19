@@ -234,44 +234,44 @@ contexts:
       pop: 1
     - match: (\()(if)(:)
       captures:
-        1: punctuation.section.block.begin.overpass
+        1: punctuation.section.group.begin.overpass
         2: keyword.control.conditional.if.overpass
         3: punctuation.separator.overpass
       push: operator-filter-body
     - match: (\()({{tags}}|way_cnt|way_link|id|around|poly|newer|changed|user|uid|area|pivot)(:|(?=\.))
       captures:
-        1: punctuation.section.block.begin.overpass
+        1: punctuation.section.group.begin.overpass
         2: keyword.operator.logical.overpass
         3: punctuation.separator.overpass
       push: operator-filter-body
     - match: \(
-      scope: punctuation.section.block.begin.overpass
+      scope: punctuation.section.group.begin.overpass
       push: bbox-body
     - match: \[
-      scope: punctuation.section.block.begin.overpass
+      scope: punctuation.section.group.begin.overpass
       push: query-filter-body
     - include: else-pop
 
   operator-filter-body:
-    - meta_scope: meta.block.filter.operator.overpass
+    - meta_scope: meta.group.filter.operator.overpass
     - match: \)
-      scope: punctuation.section.block.end.overpass
+      scope: punctuation.section.group.end.overpass
       pop: 1
     - include: sets
     - include: expressions
     - include: comma-separators
 
   query-filter-body:
-    - meta_scope: meta.block.filter.query.overpass
+    - meta_scope: meta.group.filter.query.overpass
     - match: \]
-      scope: punctuation.section.block.end.overpass
+      scope: punctuation.section.group.end.overpass
       pop: 1
     - include: expressions
 
   bbox-body:
-    - meta_scope: meta.block.filter.bbox.overpass
+    - meta_scope: meta.group.filter.bbox.overpass
     - match: \)
-      scope: punctuation.section.block.end.overpass
+      scope: punctuation.section.group.end.overpass
       pop: 1
     - include: comma-separators
     - include: expressions
