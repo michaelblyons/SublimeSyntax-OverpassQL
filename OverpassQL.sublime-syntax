@@ -229,6 +229,7 @@ contexts:
       pop: 1
     - include: sets
     - include: expressions
+    - include: comma-separators
 
   query-filter-body:
     - meta_scope: meta.block.filter.query.overpass
@@ -426,7 +427,6 @@ variables:
   tags_abbrev: (?:\b(?:[tnwr]|nw|nwr|wr|bn|br|bw)\b)
   tags: (?:{{tags_full}}|{{tags_abbrev}})
 
-  functions_bare: \b(?:around)\b
   functions_builtin: |-
     \b(?x:
       abs | angle | center | changeset | count

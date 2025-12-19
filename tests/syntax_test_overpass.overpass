@@ -456,6 +456,31 @@
   out geom;
 
    node(around:100.0,50.7,7.1);
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
+/* ^^^^ entity.name.tag.overpass */
+/*     ^^^^^^^^^^^^^^^^^^^^^^^ meta.block.filter.operator.overpass */
+/*     ^ punctuation.section.block.begin.overpass */
+/*      ^^^^^^ keyword.operator.logical.overpass */
+/*            ^ punctuation.separator.overpass */
+/*             ^^^^^ meta.number.float.decimal.overpass constant.numeric.value.overpass */
+/*                ^ punctuation.separator.decimal.overpass */
+/*                  ^ punctuation.separator.overpass */
+/*                   ^^^^ meta.number.float.decimal.overpass constant.numeric.value.overpass */
+/*                     ^ punctuation.separator.decimal.overpass */
+/*                       ^ punctuation.separator.overpass */
+/*                        ^^^ meta.number.float.decimal.overpass constant.numeric.value.overpass */
+/*                         ^ punctuation.separator.decimal.overpass */
+/*                           ^ punctuation.section.block.end.overpass */
+/*                            ^ punctuation.terminator.overpass */
+
+   node.a.b;
+/* ^^^^^^^^^ meta.statement.overpass */
+/* ^^^^ entity.name.tag.overpass */
+/*     ^ keyword.operator.logical.intersection.overpass */
+/*      ^ variable.other.readwrite.powershell */
+/*       ^ keyword.operator.logical.intersection.overpass */
+/*        ^ variable.other.readwrite.powershell */
+/*         ^ punctuation.terminator.overpass */
 
 
   // Example 1
