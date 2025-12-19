@@ -338,17 +338,21 @@ contexts:
     - match: '"'
       scope: meta.string.overpass string.quoted.double.overpass punctuation.definition.string.begin.overpass
       embed: scope:source.regexp
-      escape: (?<!\\)(")
+      escape: (?<!\\)(")(?:(,)(i))?
       embed_scope: meta.string.overpass string.quoted.double.overpass source.regexp.embedded.overpass
       escape_captures:
         1: meta.string.overpass string.quoted.double.overpass punctuation.definition.string.end.overpass
+        2: punctuation.separator.overpass
+        3: storage.modifier.mode.overpass
     - match: \'
       scope: meta.string.overpass string.quoted.double.overpass punctuation.definition.string.begin.overpass
       embed: scope:source.regexp
-      escape: (?<!\\)(')
+      escape: (?<!\\)(')(?:(,)(i))?
       embed_scope: meta.string.overpass string.quoted.double.overpass source.regexp.embedded.overpass
       escape_captures:
         1: meta.string.overpass string.quoted.double.overpass punctuation.definition.string.end.overpass
+        2: punctuation.separator.overpass
+        3: storage.modifier.mode.overpass
     - include: else-pop
 
   numbers:

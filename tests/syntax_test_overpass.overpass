@@ -370,6 +370,8 @@
 /*             ^ punctuation.definition.string.begin.overpass */
 /*              ^^^ source.regexp.embedded.overpass */
 /*                 ^ punctuation.definition.string.end.overpass */
+/*                  ^ punctuation.separator.overpass */
+/*                   ^ storage.modifier.mode.overpass */
 /*                    ^ punctuation.section.block.end.overpass */
 /*                     ^ punctuation.terminator.overpass */
   node[lastchecked=2017-09-28T19:51:44Z];
