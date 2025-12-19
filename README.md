@@ -3,7 +3,7 @@
 [Overpass QL][opql] is a language
 for retrieving results
 from [OpenStreetMap][osm]'s Overpass API.
-This project is a WIP syntax highlighter
+This project is a syntax highlighter
 for OverpassQL syntax
 in [Sublime Text][st].
 
@@ -26,6 +26,8 @@ in [Sublime Text][st].
 - Support for operators
 - Support for functions
 - Support for sets
+- Some support for flow control
+    * `if` statements
 - Minimal support for settings
 - Styles are delegated to CSS
 
@@ -38,8 +40,18 @@ in [Sublime Text][st].
 
 ### Language syntax
 
-- Support for flow control
+- More support for block statements
+    * `foreach`
+    * `for`
+    * `complete`
+    * `retro`
+    * `compare`
 - Better support for standalone standments
+    * `is_in`
+    * `timeline`
+    * `local`
+    * `convert`
+    * `make`
 - Better scopes for `out` clauses
 
 

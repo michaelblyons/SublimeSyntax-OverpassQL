@@ -116,7 +116,37 @@ contexts:
       set: maybe-assignment
     - include: statements
 
-  if-statements: []
+  if-statements:
+    - match: \bif(?=\s)
+      scope: keyword.control.conditional.if.overpass
+      push: [if-block, if-evaluator]
+
+  if-evaluator:
+    - match: \(
+      scope: punctuation.section.group.begin.overpass
+      push: if-evaluator-body
+    - include: else-pop
+
+  if-evaluator-body:
+    - meta_scope: meta.group.conditional.overpass
+    - match: \)
+      scope: punctuation.section.group.end.overpass
+      pop: 1
+    - include: expressions
+
+  if-block:
+    - meta_scope: meta.block.conditional.overpass
+    - match: \{
+      scope: punctuation.section.block.begin.overpass
+      push: if-block-body
+    - include: else-pop
+
+  if-block-body:
+    - match: \}
+      scope: punctuation.section.block.end.overpass
+      pop: 2
+    - include: statements
+
   foreach-statements: []
   for-statements: []
   complete-statements: []

@@ -482,6 +482,26 @@
 /*        ^ variable.other.readwrite.powershell */
 /*         ^ punctuation.terminator.overpass */
 
+  if (1=1)
+/*^^^^^^^^ meta.block.conditional.overpass */
+/*^^ keyword.control.conditional.if.overpass */
+/*   ^^^^^ meta.group.conditional.overpass */
+/*   ^ punctuation.section.group.begin.overpass */
+/*    ^ meta.number.integer.decimal.overpass constant.numeric.value.overpass */
+/*     ^ keyword.operator.logical.overpass */
+/*      ^ meta.number.integer.decimal.overpass constant.numeric.value.overpass */
+/*       ^ punctuation.section.group.end.overpass */
+  {
+    .b -> out;
+/*^^^^^^^^^^^^ meta.block.conditional.overpass */
+/*  ^^ variable.other.readwrite.overpass */
+/*  ^ punctuation.definition.variable.begin.overpass */
+/*     ^ keyword.operator.arithmetic.overpass */
+/*      ^ keyword.operator.pipe.overpass */
+/*        ^^^ keyword.control.flow.return.overpass */
+/*           ^ punctuation.terminator.statement.overpass */
+  }
+
 
   // Example 1
 
@@ -729,7 +749,44 @@
   ) ->.a;
   .a is_in -> .b;
   way.b["route"="hiking"] -> .hiking_routes;
-  // (way(area.boundaryarea)(if: length() > 10000)["leisure"="nature_reserve"]; - .hiking_routes;);
+  (way(area.boundaryarea)(if: length() > 10000)["leisure"="nature_reserve"]; - .hiking_routes;);
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.overpass */
+/*^ punctuation.section.block.begin.overpass */
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.statement.overpass */
+/* ^^^ entity.name.tag.overpass */
+/*    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.filter.operator.overpass */
+/*    ^ punctuation.section.block.begin.overpass */
+/*     ^^^^ keyword.operator.logical.overpass */
+/*         ^^^^^^^^^^^^^ variable.other.readwrite.overpass */
+/*         ^ punctuation.definition.variable.begin.overpass */
+/*                      ^ punctuation.section.block.end.overpass */
+/*                       ^ punctuation.section.block.begin.overpass */
+/*                        ^^ keyword.control.conditional.if.overpass */
+/*                          ^ punctuation.separator.overpass */
+/*                            ^^^^^^ meta.function-call.identifier.overpass support.function.overpass */
+/*                                  ^^ meta.function-call.arguments.overpass */
+/*                                  ^ punctuation.section.arguments.begin.overpass */
+/*                                   ^ punctuation.section.arguments.end.overpass */
+/*                                     ^ keyword.operator.logical.overpass */
+/*                                       ^^^^^ meta.number.integer.decimal.overpass constant.numeric.value.overpass */
+/*                                            ^ punctuation.section.block.end.overpass */
+/*                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.filter.query.overpass */
+/*                                             ^ punctuation.section.block.begin.overpass */
+/*                                              ^^^^^^^^^ string.quoted.double.overpass */
+/*                                              ^ punctuation.definition.string.begin.overpass */
+/*                                                      ^ punctuation.definition.string.end.overpass */
+/*                                                       ^ keyword.operator.logical.overpass */
+/*                                                        ^^^^^^^^^^^^^^^^ string.quoted.double.overpass */
+/*                                                        ^ punctuation.definition.string.begin.overpass */
+/*                                                                       ^ punctuation.definition.string.end.overpass */
+/*                                                                        ^ punctuation.section.block.end.overpass */
+/*                                                                         ^ punctuation.terminator.overpass */
+/*                                                                           ^ keyword.operator.arithmetic.overpass */
+/*                                                                             ^^^^^^^^^^^^^^ variable.other.readwrite.overpass */
+/*                                                                             ^ punctuation.definition.variable.begin.overpass */
+/*                                                                                           ^ punctuation.terminator.statement.overpass */
+/*                                                                                            ^ punctuation.section.block.end.overpass */
+/*                                                                                             ^ punctuation.terminator.statement.overpass */
   /*added by auto repair*/
 /*^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.overpass */
 /*^^ punctuation.definition.comment.begin.overpass */
