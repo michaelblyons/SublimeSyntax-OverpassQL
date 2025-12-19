@@ -16,16 +16,18 @@ in [Sublime Text][st].
 
 ### Language syntax
 
-- Support for basic query statements
+- Support for query statements
 - Support for logical block statements
 - Support for literals
-    * Naive support for regular expression string after `~` and `!~`
+    * Numbers
+    * Dates
+    * Quoted strings
+        * Regular expression highlighting after `~` or `!~`
 - Support for operators
 - Support for functions
-- Support for flow control
-- Modest support for sets
+- Support for sets
 - Minimal support for settings
-- Naive support for styles (delegates to CSS)
+- Styles are delegated to CSS
 
 
 ## To-do
@@ -36,7 +38,8 @@ in [Sublime Text][st].
 
 ### Language syntax
 
-- Support intersection
+- Support for flow control
+- Better support for standalone standments
 - Better scopes for `out` clauses
 
 
