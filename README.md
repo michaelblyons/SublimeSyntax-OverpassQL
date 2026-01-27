@@ -8,6 +8,18 @@ for OverpassQL syntax
 in [Sublime Text][st].
 
 
+## Installation
+
+- This package is in Sublime Text's Package Control system.
+  That's probably the easiest option,
+  and it automatically updates.
+
+- You can also install manually
+  by cloning or symlinking this repository
+  into the Packages directory
+  for your ST installation.
+
+
 ## Status
 
 ### Build system
