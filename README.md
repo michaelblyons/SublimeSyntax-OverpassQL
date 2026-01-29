@@ -7,6 +7,10 @@ This project is a syntax highlighter
 for OverpassQL syntax
 in [Sublime Text][st].
 
+It should be compatible
+with [bat][] and [delta][],
+but this hasn't been tested.
+
 
 ## Installation
 
@@ -70,3 +74,5 @@ in [Sublime Text][st].
 [opql]: https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL
 [osm]: https://osm.org
 [st]: https://www.sublimetext.com
+[bat]: https://github.com/sharkdp/bat
+[delta]: https://dandavison.github.io/delta/
