@@ -45,7 +45,8 @@ but this hasn't been tested.
 - Some support for flow control
     * `if` statements
 - Minimal support for settings
-- Styles are delegated to CSS
+- Styles are delegated to CSS.
+- YAML frontmatter is supported for Ultra.
 
 
 ## To-do

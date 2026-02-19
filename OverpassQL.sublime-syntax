@@ -19,6 +19,16 @@ contexts:
     - include: comments
 
   main:
+    - match: ^(---)$\n
+      captures:
+        1: punctuation.section.block.begin.overpass
+      embed: scope:source.yaml
+      escape: ^(---)$
+      escape_captures: punctuation.section.block.end.overpass
+    - match: (?=\S)
+      push: overpass
+
+  overpass:
     - include: statements
     - include: styles
 
